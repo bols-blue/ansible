@@ -42,5 +42,16 @@ clean:
 modules: $(FORMATTER) ../hacking/templates/rst.j2
 	PYTHONPATH=../lib $(FORMATTER) -t rst --template-dir=../hacking/templates --module-dir=../lib/ansible/modules -o rst/
 
+gettext: clean modules staticmin
+	/Library/Frameworks/Python.framework/Versions/2.7/bin/sphinx-build -b gettext rst ./locale/org/LC_MESSAGES
+	@echo
+	@echo "Build finished. The message catalogs are in ./locale."
+
+jadoc: clean modules staticmin
+	/Library/Frameworks/Python.framework/Versions/2.7/bin/sphinx-build -b html rst ./jadoc
+	@echo
+	@echo "Build finished. The message catalogs are in ./locale."
+
+staticmin:
 staticmin:
 	cat _themes/srtd/static/css/theme.css | sed -e 's/^[ \t]*//g; s/[ \t]*$$//g; s/\([:{;,]\) /\1/g; s/ {/{/g; s/\/\*.*\*\///g; /^$$/d' | sed -e :a -e '$$!N; s/\n\(.\)/\1/; ta' > _themes/srtd/static/css/theme.min.css
