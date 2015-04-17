@@ -31,6 +31,8 @@ sys.path.append(os.path.abspath('_themes'))
 VERSION='0.01'
 AUTHOR='Ansible, Inc'
 
+language='ja'
+locale_dirs=['../locale']
 
 # General configuration
 # ---------------------
