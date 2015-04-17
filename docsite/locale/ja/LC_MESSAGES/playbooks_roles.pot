@@ -1,0 +1,414 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/playbooks_roles.rst:2
+msgid "Playbook Roles and Include Statements"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:9
+msgid "While it is possible to write a playbook in one very large file (and you might start out learning playbooks this way), eventually you'll want to reuse files and start to organize things."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:12
+msgid "At a basic level, including task files allows you to break up bits of configuration policy into smaller files.  Task includes pull in tasks from other files.  Since handlers are tasks too, you can also include handler files from the 'handlers:' section."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:15
+msgid "See :doc:`playbooks` if you need a review of these concepts."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:17
+msgid "Playbooks can also include plays from other playbook files.  When that is done, the plays will be inserted into the playbook to form a longer list of plays."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:20
+msgid "When you start to think about it -- tasks, handlers, variables, and so on -- begin to form larger concepts.  You start to think about modeling what something is, rather than how to make something look like something.  It's no longer \"apply this handful of THINGS to these hosts\", you say \"these hosts are dbservers\" or \"these hosts are webservers\".  In programming, we might call that \"encapsulating\" how things work.  For instance, you can drive a car without knowing how the engine works."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:24
+msgid "Roles in Ansible build on the idea of include files and combine them to form clean, reusable abstractions -- they allow you to focus more on the big picture and only dive down into the details when needed."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:27
+msgid "We'll start with understanding includes so roles make more sense, but our ultimate goal should be understanding roles -- roles are great and you should use them every time you write playbooks."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:30
+msgid "See the `ansible-examples <https://github.com/ansible/ansible-examples>`_ repository on GitHub for lots of examples of all of this put together.  You may wish to have this open in a separate tab as you dive in."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:34
+msgid "Task Include Files And Encouraging Reuse"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:36
+msgid "Suppose you want to reuse lists of tasks between plays or playbooks.  You can use include files to do this.  Use of included task lists is a great way to define a role that system is going to fulfill.  Remember, the goal of a play in a playbook is to map a group of systems into multiple roles.  Let's see what this looks like..."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:41
+msgid "A task include file simply contains a flat list of tasks, like so::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:52
+msgid "Include directives look like this, and can be mixed in with regular tasks in a playbook::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:58
+msgid "You can also pass variables into includes.  We call this a 'parameterized include'."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:60
+msgid "For instance, if deploying multiple wordpress instances, I could contain all of my wordpress tasks in a single wordpress.yml file, and use it like so::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:68
+msgid "If you are running Ansible 1.4 and later, include syntax is streamlined to match roles, and also allows passing list and dictionary parameters::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:73
+msgid "Using either syntax, variables passed in can then be used in the included files.  We'll cover them in :doc:`playbooks_variables`. You can reference them like this::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:78
+msgid "(In addition to the explicitly passed-in parameters, all variables from the vars section are also available for use here as well.)"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:81
+msgid "Starting in 1.0, variables can also be passed to include files using an alternative syntax, which also supports structured variables::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:94
+msgid "Playbooks can include other playbooks too, but that's mentioned in a later section."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:97
+msgid "As of 1.0, task include statements can be used at arbitrary depth. They were previously limited to a single level, so task includes could not include other files containing task includes."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:101
+msgid "Includes can also be used in the 'handlers' section, for instance, if you want to define how to restart apache, you only have to do that once for all of your playbooks.  You might make a handlers.yml that looks like::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:110
+msgid "And in your main playbook file, just include it like so, at the bottom of a play::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:116
+msgid "You can mix in includes along with your regular non-included tasks and handlers."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:118
+msgid "Includes can also be used to import one playbook file into another. This allows you to define a top-level playbook that is composed of other playbooks."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:121
+msgid "For example::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:137
+msgid "Note that you cannot do variable substitution when including one playbook inside another."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:141
+msgid "You can not conditionally path the location to an include file, like you can with 'vars_files'.  If you find yourself needing to do this, consider how you can restructure your playbook to be more class/role oriented.  This is to say you cannot use a 'fact' to decide what include file to use.  All hosts contained within the play are going to get the same tasks.  ('*when*' provides some ability for hosts to conditionally skip tasks)."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:152
+msgid "Roles"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:156
+msgid "Now that you have learned about tasks and handlers, what is the best way to organize your playbooks? The short answer is to use roles!  Roles are ways of automatically loading certain vars_files, tasks, and handlers based on a known file structure.  Grouping content by roles also allows easy sharing of roles with other users."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:160
+msgid "Roles are just automation around 'include' directives as described above, and really don't contain much additional magic beyond some improvements to search path handling for referenced files.  However, that can be a big thing!"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:163
+msgid "Example project structure::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:186
+msgid "In a playbook, it would look like this::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:194
+msgid "This designates the following behaviors, for each role 'x':"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:196
+msgid "If roles/x/tasks/main.yml exists, tasks listed therein will be added to the play"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:197
+msgid "If roles/x/handlers/main.yml exists, handlers listed therein will be added to the play"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:198
+msgid "If roles/x/vars/main.yml exists, variables listed therein will be added to the play"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:199
+msgid "If roles/x/meta/main.yml exists, any role dependencies listed therein will be added to the list of roles (1.3 and later)"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:200
+msgid "Any copy tasks can reference files in roles/x/files/ without having to path them relatively or absolutely"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:201
+msgid "Any script tasks can reference scripts in roles/x/files/ without having to path them relatively or absolutely"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:202
+msgid "Any template tasks can reference files in roles/x/templates/ without having to path them relatively or absolutely"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:203
+msgid "Any include tasks can reference files in roles/x/tasks/ without having to path them relatively or absolutely"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:205
+msgid "In Ansible 1.4 and later you can configure a roles_path to search for roles.  Use this to check all of your common roles out to one location, and share them easily between multiple playbook projects.  See :doc:`intro_configuration` for details about how to set this up in ansible.cfg."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:209
+msgid "Role dependencies are discussed below."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:211
+msgid "If any files are not present, they are just ignored.  So it's ok to not have a 'vars/' subdirectory for the role, for instance."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:214
+msgid "Note, you are still allowed to list tasks, vars_files, and handlers \"loose\" in playbooks without using roles, but roles are a good organizational feature and are highly recommended.  If there are loose things in the playbook, the roles are evaluated first."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:218
+msgid "Also, should you wish to parameterize roles, by adding variables, you can do so, like this::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:228
+msgid "While it's probably not something you should do often, you can also conditionally apply roles like so::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:236
+msgid "This works by applying the conditional to every task in the role.  Conditionals are covered later on in the documentation."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:239
+msgid "Finally, you may wish to assign tags to the roles you specify. You can do so inline:::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:248
+msgid "If the play still has a 'tasks' section, those tasks are executed after roles are applied."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:250
+msgid "If you want to define certain tasks to happen before AND after roles are applied, you can do this::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:269
+msgid "If using tags with tasks (described later as a means of only running part of a playbook), be sure to also tag your pre_tasks and post_tasks and pass those along as well, especially if the pre and post tasks are used for monitoring outage window control or load balancing."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:274
+msgid "Role Default Variables"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:278
+msgid "Role default variables allow you to set default variables for included or dependent roles (see below). To create defaults, simply add a `defaults/main.yml` file in your role directory. These variables will have the lowest priority of any variables available, and can be easily overridden by any other variable, including inventory variables."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:283
+msgid "Role Dependencies"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:287
+msgid "Role dependencies allow you to automatically pull in other roles when using a role. Role dependencies are stored in the `meta/main.yml` file contained within the role directory. This file should contain a list of roles and parameters to insert before the specified role, such as the following in an example `roles/myapp/meta/main.yml`::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:298
+msgid "Role dependencies can also be specified as a full path, just like top level roles::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:304
+msgid "Role dependencies can also be installed from source control repos or tar files, using a comma separated format of path, an optional version (tag, commit, branch etc) and optional friendly role name (an attempt is made to derive a role name from the repo name or archive filename)::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:311
+msgid "Roles dependencies are always executed before the role that includes them, and are recursive. By default, roles can also only be added as a dependency once - if another role also lists it as a dependency it will not be run again. This behavior can be overridden by adding `allow_duplicates: yes` to the `meta/main.yml` file. For example, a role named 'car' could add a role named 'wheel' to its dependencies as follows::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:323
+msgid "And the `meta/main.yml` for wheel contained the following::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:331
+msgid "The resulting order of execution would be as follows::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:343
+msgid "Variable inheritance and scope are detailed in the :doc:`playbooks_variables`."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:346
+msgid "Embedding Modules In Roles"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:348
+msgid "This is an advanced topic that should not be relevant for most users."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:350
+msgid "If you write a custom module (see :doc:`developing_modules`) you may wish to distribute it as part of a role.  Generally speaking, Ansible as a project is very interested in taking high-quality modules into ansible core for inclusion, so this shouldn't be the norm, but it's quite easy to do."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:353
+msgid "A good example for this is if you worked at a company called AcmeWidgets, and wrote an internal module that helped configure your internal software, and you wanted other people in your organization to easily use this module -- but you didn't want to tell everyone how to configure their Ansible library path."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:356
+msgid "Alongside the 'tasks' and 'handlers' structure of a role, add a directory named 'library'.  In this 'library' directory, then include the module directly inside of it."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:358
+msgid "Assuming you had this::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:366
+msgid "The module will be usable in the role itself, as well as any roles that are called *after* this role, as follows::"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:375
+msgid "This can also be used, with some limitations, to modify modules in Ansible's core distribution, such as to use development versions of modules before they are released in production releases.  This is not always advisable as API signatures may change in core components, however, and is not always guaranteed to work.  It can be a handy way of carrying a patch against a core module, however, should you have good reason for this.  Naturally the project prefers that contributions be directed back to github whenever possible via a pull request."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:381
+msgid "Ansible Galaxy"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:383
+msgid "`Ansible Galaxy <http://galaxy.ansible.com>`_ is a free site for finding, downloading, rating, and reviewing all kinds of community developed Ansible roles and can be a great way to get a jumpstart on your automation projects."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:385
+msgid "You can sign up with social auth, and the download client 'ansible-galaxy' is included in Ansible 1.4.2 and later."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:387
+msgid "Read the \"About\" page on the Galaxy site for more information."
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:391
+msgid ":doc:`galaxy`"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:392
+msgid "How to share roles on galaxy, role management"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:393
+msgid ":doc:`YAMLSyntax`"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:394
+msgid "Learn about YAML syntax"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:395
+msgid ":doc:`playbooks`"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:396
+msgid "Review the basic Playbook language features"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:397
+msgid ":doc:`playbooks_best_practices`"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:398
+msgid "Various tips about managing playbooks in the real world"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:399
+msgid ":doc:`playbooks_variables`"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:400
+msgid "All about variables in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:401
+msgid ":doc:`playbooks_conditionals`"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:402
+msgid "Conditionals in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:403
+msgid ":doc:`playbooks_loops`"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:404
+msgid "Loops in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:405
+msgid ":doc:`modules`"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:406
+msgid "Learn about available modules"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:407
+msgid ":doc:`developing_modules`"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:408
+msgid "Learn how to extend Ansible by writing your own modules"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:409
+msgid "`GitHub Ansible examples <https://github.com/ansible/ansible-examples>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:410
+msgid "Complete playbook files from the GitHub project source"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:411
+msgid "`Mailing List <http://groups.google.com/group/ansible-project>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_roles.rst:412
+msgid "Questions? Help? Ideas?  Stop by the list on Google Groups"
+msgstr ""
+

@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/intro_getting_started.rst:2
+msgid "Getting Started"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:9
+msgid "Foreword"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:11
+msgid "Now that you've read :doc:`intro_installation` and installed Ansible, it's time to dig in and get started with some commands."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:14
+msgid "What we are showing first are not the powerful configuration/deployment/orchestration features of Ansible. These features are handled by playbooks which are covered in a separate section."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:17
+msgid "This section is about how to initially get going.  Once you have these concepts down, read :doc:`intro_adhoc` for some more detail, and then you'll be ready to dive into playbooks and explore the most interesting parts!"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:23
+msgid "Remote Connection Information"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:25
+msgid "Before we get started, it's important to understand how Ansible communicates with remote machines over SSH."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:28
+msgid "By default, Ansible 1.3 and later will try to use native OpenSSH for remote communication when possible.  This enables ControlPersist (a performance feature), Kerberos, and options in ~/.ssh/config such as Jump Host setup.  However, when using Enterprise Linux 6 operating systems as the control machine (Red Hat Enterprise Linux and derivatives such as CentOS), the version of OpenSSH may be too old to support ControlPersist. On these operating systems, Ansible will fallback into using a high-quality Python implementation of OpenSSH called 'paramiko'.  If you wish to use features like Kerberized SSH and more, consider using Fedora, OS X, or Ubuntu as your control machine until a newer version of OpenSSH is available for your platform -- or engage 'accelerated mode' in Ansible.  See :doc:`playbooks_acceleration`."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:32
+msgid "In releases up to and including Ansible 1.2, the default was strictly paramiko.  Native SSH had to be explicitly selected with the -c ssh option or set in the configuration file."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:34
+msgid "Occasionally you'll encounter a device that doesn't support SFTP. This is rare, but should it occur, you can switch to SCP mode in :doc:`intro_configuration`."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:36
+msgid "When speaking with remote machines, Ansible by default assumes you are using SSH keys.  SSH keys are encouraged but password authentication can also be used where needed by supplying the option ``--ask-pass``.  If using sudo features and when sudo requires a password, also supply ``--ask-sudo-pass``."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:38
+msgid "While it may be common sense, it is worth sharing: Any management system benefits from being run near the machines being managed. If you are running Ansible in a cloud, consider running it from a machine inside that cloud.  In most cases this will work better than on the open Internet."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:40
+msgid "As an advanced topic, Ansible doesn't just have to connect remotely over SSH.  The transports are pluggable, and there are options for managing things locally, as well as managing chroot, lxc, and jail containers.  A mode called 'ansible-pull' can also invert the system and have systems 'phone home' via scheduled git checkouts to pull configuration directives from a central repository."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:45
+msgid "Your first commands"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:47
+msgid "Now that you've installed Ansible, it's time to get started with some basics."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:49
+msgid "Edit (or create) /etc/ansible/hosts and put one or more remote systems in it. Your public SSH key should be located in ``authorized_keys`` on those systems::"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:56
+msgid "This is an inventory file, which is also explained in greater depth here:  :doc:`intro_inventory`."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:58
+msgid "We'll assume you are using SSH keys for authentication.  To set up SSH agent to avoid retyping passwords, you can do:"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:66
+msgid "(Depending on your setup, you may wish to use Ansible's ``--private-key`` option to specify a pem file instead)"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:68
+msgid "Now ping all your nodes:"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:74
+msgid "Ansible will attempt to remote connect to the machines using your current user name, just like SSH would.  To override the remote user name, just use the '-u' parameter."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:77
+msgid "If you would like to access sudo mode, there are also flags to do that:"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:88
+msgid "(The sudo implementation is changeable in Ansible's configuration file if you happen to want to use a sudo replacement.  Flags passed to sudo (like -H) can also be set there.)"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:91
+msgid "Now run a live command on all of your nodes:"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:97
+msgid "Congratulations!  You've just contacted your nodes with Ansible.  It's soon going to be time to: read about some more real-world cases in :doc:`intro_adhoc`, explore what you can do with different modules, and to learn about the Ansible :doc:`playbooks` language.  Ansible is not just about running commands, it also has powerful configuration management and deployment features.  There's more to explore, but you already have a fully working infrastructure!"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:107
+msgid "Host Key Checking"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:109
+msgid "Ansible 1.2.1 and later have host key checking enabled by default."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:111
+msgid "If a host is reinstalled and has a different key in 'known_hosts', this will result in an error message until corrected.  If a host is not initially in 'known_hosts' this will result in prompting for confirmation of the key, which results in an interactive experience if using Ansible, from say, cron.  You might not want this."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:113
+msgid "If you understand the implications and wish to disable this behavior, you can do so by editing /etc/ansible/ansible.cfg or ~/.ansible.cfg::"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:118
+msgid "Alternatively this can be set by an environment variable:"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:124
+msgid "Also note that host key checking in paramiko mode is reasonably slow, therefore switching to 'ssh' is also recommended when using this feature."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:128
+msgid "Ansible will log some information about module arguments on the remote system in the remote syslog, unless a task or play is marked with a \"no_log: True\" attribute. This is explained later."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:130
+msgid "To enable basic logging on the control machine see :doc:`intro_configuration` document and set the 'log_path' configuration file setting.  Enterprise users may also be interested in :doc:`tower`.  Tower provides a very robust database logging feature where it is possible to drill down and see history based on hosts, projects, and particular inventories over time -- explorable both graphically and through a REST API."
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:134
+msgid ":doc:`intro_inventory`"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:135
+msgid "More information about inventory"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:136
+msgid ":doc:`intro_adhoc`"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:137
+msgid "Examples of basic commands"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:138
+msgid ":doc:`playbooks`"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:139
+msgid "Learning Ansible's configuration management language"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:140
+msgid "`Mailing List <http://groups.google.com/group/ansible-project>`_"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:141
+msgid "Questions? Help? Ideas?  Stop by the list on Google Groups"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:142
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/intro_getting_started.rst:143
+msgid "#ansible IRC chat channel"
+msgstr ""
+

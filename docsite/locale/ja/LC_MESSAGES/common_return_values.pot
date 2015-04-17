@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/common_return_values.rst:2
+msgid "Common Return Values"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:6
+msgid "Ansible modules normally return a data structure that can be registered into a variable, or seen directly when using the `ansible` program as output. Here we document the values common to all modules, each module can optionally document its own unique returns. If these docs exist they will be visible through ansible-doc and https://docs.ansible.com."
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:13
+msgid "Facts"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:15
+msgid "Some modules return 'facts' to ansible (i.e setup), this is done through a 'ansible_facts' key and anything inside will automatically be available for the current host directly as a variable and there is no need to register this data."
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:23
+msgid "Status"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:25
+msgid "Every module must return a status, saying if the module was successful, if anything changed or not. Ansible itself will return a status if it skips the module due to a user condition (when: ) or running in check mode when the module does not support it."
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:33
+msgid "Other common returns"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:35
+msgid "It is common on failure or success to return a 'msg' that either explains the failure or makes a note about the execution. Some modules, specifically those that execute shell or commands directly, will return stdout and stderr, if ansible sees a stdout in the results it will append a stdout_lines which is just a list or the lines in stdout."
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:41
+msgid ":doc:`modules`"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:42
+msgid "Learn about available modules"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:43
+msgid "`GitHub Core modules directory <https://github.com/ansible/ansible-modules-core/tree/devel>`_"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:44
+msgid "Browse source of core modules"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:45
+msgid "`Github Extras modules directory <https://github.com/ansible/ansible-modules-extras/tree/devel>`_"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:46
+msgid "Browse source of extras modules."
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:47
+msgid "`Mailing List <http://groups.google.com/group/ansible-devel>`_"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:48
+msgid "Development mailing list"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:49
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/common_return_values.rst:50
+msgid "#ansible IRC chat channel"
+msgstr ""
+

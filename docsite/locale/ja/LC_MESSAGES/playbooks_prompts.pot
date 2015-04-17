@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/playbooks_prompts.rst:2
+msgid "Prompts"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:4
+msgid "When running a playbook, you may wish to prompt the user for certain input, and can do so with the 'vars_prompt' section."
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:7
+msgid "A common use for this might be for asking for sensitive data that you do not want to record."
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:9
+msgid "This has uses beyond security, for instance, you may use the same playbook for all software releases and would prompt for a particular release version in a push-script."
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:13
+msgid "Here is a most basic example::"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:27
+msgid "If you have a variable that changes infrequently, it might make sense to provide a default value that can be overridden.  This can be accomplished using the default argument::"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:37
+msgid "An alternative form of vars_prompt allows for hiding input from the user, and may later support some other options, but otherwise works equivalently::"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:50
+msgid "If `Passlib <http://pythonhosted.org/passlib/>`_ is installed, vars_prompt can also crypt the entered value so you can use it, for instance, with the user module to define a password::"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:62
+msgid "You can use any crypt scheme supported by 'Passlib':"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:64
+msgid "*des_crypt* - DES Crypt"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:65
+msgid "*bsdi_crypt* - BSDi Crypt"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:66
+msgid "*bigcrypt* - BigCrypt"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:67
+msgid "*crypt16* - Crypt16"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:68
+msgid "*md5_crypt* - MD5 Crypt"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:69
+msgid "*bcrypt* - BCrypt"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:70
+msgid "*sha1_crypt* - SHA-1 Crypt"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:71
+msgid "*sun_md5_crypt* - Sun MD5 Crypt"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:72
+msgid "*sha256_crypt* - SHA-256 Crypt"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:73
+msgid "*sha512_crypt* - SHA-512 Crypt"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:74
+msgid "*apr_md5_crypt* - Apache’s MD5-Crypt variant"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:75
+msgid "*phpass* - PHPass’ Portable Hash"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:76
+msgid "*pbkdf2_digest* - Generic PBKDF2 Hashes"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:77
+msgid "*cta_pbkdf2_sha1* - Cryptacular’s PBKDF2 hash"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:78
+msgid "*dlitz_pbkdf2_sha1* - Dwayne Litzenberger’s PBKDF2 hash"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:79
+msgid "*scram* - SCRAM Hash"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:80
+msgid "*bsd_nthash* - FreeBSD’s MCF-compatible nthash encoding"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:82
+msgid "However, the only parameters accepted are 'salt' or 'salt_size'. You can use your own salt using 'salt', or have one generated automatically using 'salt_size'. If nothing is specified, a salt of size 8 will be generated."
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:88
+msgid ":doc:`playbooks`"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:89
+msgid "An introduction to playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:90
+msgid ":doc:`playbooks_conditionals`"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:91
+msgid "Conditional statements in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:92
+msgid ":doc:`playbooks_variables`"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:93
+msgid "All about variables"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:94
+msgid "`User Mailing List <http://groups.google.com/group/ansible-devel>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:95
+msgid "Have a question?  Stop by the google group!"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:96
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_prompts.rst:97
+msgid "#ansible IRC chat channel"
+msgstr ""
+

@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/unarchive_module.rst:5
+msgid "unarchive - Unpacks an archive after (optionally) copying it from the local machine."
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:18
+msgid "The ``unarchive`` module unpacks an archive. By default, it will copy the source file from the local system to the target before unpacking - set copy=no to unpack an archive which already exists on the target.."
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:21
+msgid "Options"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:121
+msgid "Examples"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:138
+msgid "requires ``tar``/``unzip`` command on target host"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:139
+msgid "can handle *gzip*, *bzip2* and *xz* compressed as well as uncompressed tar files"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:140
+msgid "detects type of archive automatically"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:141
+msgid "uses tar's ``--diff arg`` to calculate if changed or not. If this ``arg`` is not supported, it will always unpack the archive"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:142
+msgid "does not detect if a .zip file is different from destination - always unzips"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:143
+msgid "existing files/directories in the destination which are not in the archive are not touched.  This is the same behavior as a normal archive extraction"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:144
+msgid "existing files/directories in the destination which are not in the archive are ignored for purposes of deciding if the archive should be unpacked or not"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:149
+msgid "This is a Core Module"
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:151
+msgid "The source of this module is hosted on GitHub in the `ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ repo."
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:153
+msgid "If you believe you have found a bug in this module, and are already running the latest stable or development version of Ansible, first look in the `issue tracker at github.com/ansible/ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ to see if a bug has already been filed.  If not, we would be grateful if you would file one."
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:155
+msgid "Should you have a question rather than a bug report, inquries are welcome on the `ansible-project google group <https://groups.google.com/forum/#!forum/ansible-project>`_ or on Ansible's \"#ansible\" channel, located on irc.freenode.net.   Development oriented topics should instead use the similar `ansible-devel google group <https://groups.google.com/forum/#!forum/ansible-devel>`_."
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:157
+msgid "Documentation updates for this module can also be edited directly by submitting a pull request to the module source code, just look for the \"DOCUMENTATION\" block in the source tree."
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:159
+msgid "This is a \"core\" ansible module, which means it will receive slightly higher priority for all requests than those in the \"extras\" repos."
+msgstr ""
+
+#: ../../../rst/unarchive_module.rst:162
+msgid "For help in developing on modules, should you be so inclined, please read :doc:`community`, :doc:`developing_test_pr` and :doc:`developing_modules`."
+msgstr ""
+

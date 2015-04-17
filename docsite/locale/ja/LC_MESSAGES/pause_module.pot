@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/pause_module.rst:5
+msgid "pause - Pause playbook execution"
+msgstr ""
+
+#: ../../../rst/pause_module.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../rst/pause_module.rst:17
+msgid "Pauses playbook execution for a set amount of time, or until a prompt is acknowledged. All parameters are optional. The default behavior is to pause with a prompt. You can use ``ctrl+c`` if you wish to advance a pause earlier than it is set to expire or if you need to abort a playbook run entirely. To continue early: press ``ctrl+c`` and then ``c``. To abort a playbook: press ``ctrl+c`` and then ``a``. The pause module integrates into async/parallelized playbooks without any special considerations (see also: Rolling Updates). When using pauses with the ``serial`` playbook parameter (as in rolling updates) you are only prompted once for the current group of hosts."
+msgstr ""
+
+#: ../../../rst/pause_module.rst:22
+msgid "Options"
+msgstr ""
+
+#: ../../../rst/pause_module.rst:59
+msgid "Examples"
+msgstr ""
+
+#: ../../../rst/pause_module.rst:83
+msgid "This is a Core Module"
+msgstr ""
+
+#: ../../../rst/pause_module.rst:85
+msgid "The source of this module is hosted on GitHub in the `ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ repo."
+msgstr ""
+
+#: ../../../rst/pause_module.rst:87
+msgid "If you believe you have found a bug in this module, and are already running the latest stable or development version of Ansible, first look in the `issue tracker at github.com/ansible/ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ to see if a bug has already been filed.  If not, we would be grateful if you would file one."
+msgstr ""
+
+#: ../../../rst/pause_module.rst:89
+msgid "Should you have a question rather than a bug report, inquries are welcome on the `ansible-project google group <https://groups.google.com/forum/#!forum/ansible-project>`_ or on Ansible's \"#ansible\" channel, located on irc.freenode.net.   Development oriented topics should instead use the similar `ansible-devel google group <https://groups.google.com/forum/#!forum/ansible-devel>`_."
+msgstr ""
+
+#: ../../../rst/pause_module.rst:91
+msgid "Documentation updates for this module can also be edited directly by submitting a pull request to the module source code, just look for the \"DOCUMENTATION\" block in the source tree."
+msgstr ""
+
+#: ../../../rst/pause_module.rst:93
+msgid "This is a \"core\" ansible module, which means it will receive slightly higher priority for all requests than those in the \"extras\" repos."
+msgstr ""
+
+#: ../../../rst/pause_module.rst:96
+msgid "For help in developing on modules, should you be so inclined, please read :doc:`community`, :doc:`developing_test_pr` and :doc:`developing_modules`."
+msgstr ""
+

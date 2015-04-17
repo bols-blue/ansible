@@ -1,0 +1,310 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/intro_installation.rst:2
+msgid "Installation"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:9
+msgid "Getting Ansible"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:11
+msgid "You may also wish to follow the `Github project <https://github.com/ansible/ansible>`_ if you have a github account.  This is also where we keep the issue tracker for sharing bugs and feature ideas."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:18
+msgid "Basics / What Will Be Installed"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:20
+msgid "Ansible by default manages machines over the SSH protocol."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:22
+msgid "Once Ansible is installed, it will not add a database, and there will be no daemons to start or keep running.  You only need to install it on one machine (which could easily be a laptop) and it can manage an entire fleet of remote machines from that central point.  When Ansible manages remote machines, it does not leave software installed or running on them, so there's no real question about how to upgrade Ansible when moving to a new version."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:27
+msgid "What Version To Pick?"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:29
+msgid "Because it runs so easily from source and does not require any installation of software on remote machines, many users will actually track the development version."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:32
+msgid "Ansible's release cycles are usually about two months long.  Due to this short release cycle, minor bugs will generally be fixed in the next release versus maintaining backports on the stable branch.  Major bugs will still have maintenance releases when needed, though these are infrequent."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:37
+msgid "If you are wishing to run the latest released version of Ansible and you are running Red Hat Enterprise Linux (TM), CentOS, Fedora, Debian, or Ubuntu, we recommend using the OS package manager."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:39
+msgid "For other installation options, we recommend installing via \"pip\", which is the Python package manager, though other options are also available."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:41
+msgid "If you wish to track the development release to use and test the latest features, we will share information about running from source.  It's not necessary to install the program to run from source."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:47
+msgid "Control Machine Requirements"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:49
+msgid "Currently Ansible can be run from any machine with Python 2.6 installed (Windows isn't supported for the control machine)."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:51
+msgid "This includes Red Hat, Debian, CentOS, OS X, any of the BSDs, and so on."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:56
+msgid "Managed Node Requirements"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:58
+msgid "On the managed nodes, you only need Python 2.4 or later, but if you are running less than Python 2.5 on the remotes, you will also need:"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:60
+msgid "``python-simplejson``"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:64
+msgid "Ansible's \"raw\" module (for executing commands in a quick and dirty way) and the script module don't even need that.  So technically, you can use Ansible to install python-simplejson using the raw module, which then allows you to use everything else.  (That's jumping ahead though.)"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:72
+msgid "If you have SELinux enabled on remote nodes, you will also want to install libselinux-python on them before using any copy/file/template related functions in Ansible. You can of course still use the yum module in Ansible to install this package on remote systems that do not have it."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:79
+msgid "Python 3 is a slightly different language than Python 2 and most Python programs (including Ansible) are not switching over yet.  However, some Linux distributions (Gentoo, Arch) may not have a Python 2.X interpreter installed by default.  On those systems, you should install one, and set the 'ansible_python_interpreter' variable in inventory (see :doc:`intro_inventory`) to point at your 2.X Python.  Distributions like Red Hat Enterprise Linux, CentOS, Fedora, and Ubuntu all have a 2.X interpreter installed by default and this does not apply to those distributions.  This is also true of nearly all Unix systems.  If you need to bootstrap these remote systems by installing Python 2.X, using the 'raw' module will be able to do it remotely."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:91
+msgid "Installing the Control Machine"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:96
+msgid "Running From Source"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:98
+msgid "Ansible is trivially easy to run from a checkout, root permissions are not required to use it and there is no software to actually install for Ansible itself.  No daemons or database setup are required.  Because of this, many users in our community use the development version of Ansible all of the time, so they can take advantage of new features when they are implemented, and also easily contribute to the project. Because there is nothing to install, following the development version is significantly easier than most open source projects."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:108
+msgid "If you are intending to use Tower as the Control Machine, do not use a source install. Please use apt/yum/pip for a stable version"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:111
+msgid "To install from source."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:119
+msgid "If you want to suppress spurious warnings/errors, use:"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:121
+msgid "$ source ./hacking/env-setup -q"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:123
+msgid "If you don't have pip installed in your version of Python, install pip::"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:127
+msgid "Ansible also uses the following Python modules that need to be installed::"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:131
+msgid "Note when updating ansible, be sure to not only update the source tree, but also the \"submodules\" in git which point at Ansible's own modules (not the same kind of modules, alas)."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:139
+msgid "Once running the env-setup script you'll be running from checkout and the default inventory file will be /etc/ansible/hosts.  You can optionally specify an inventory file (see :doc:`intro_inventory`) other than /etc/ansible/hosts:"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:148
+msgid "You can read more about the inventory file in later parts of the manual."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:150
+msgid "Now let's test things with a ping command:"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:156
+msgid "You can also use \"sudo make install\" if you wish."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:161
+msgid "Latest Release Via Yum"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:163
+msgid "RPMs are available from yum for `EPEL <http://fedoraproject.org/wiki/EPEL>`_ 6, 7, and currently supported Fedora distributions."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:167
+msgid "Ansible itself can manage earlier operating systems that contain Python 2.4 or higher (so also EL5)."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:170
+msgid "Fedora users can install Ansible directly, though if you are using RHEL or CentOS and have not already done so, `configure EPEL <http://fedoraproject.org/wiki/EPEL>`_"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:177
+msgid "You can also build an RPM yourself.  From the root of a checkout or tarball, use the ``make rpm`` command to build an RPM you can distribute and install. Make sure you have ``rpm-build``, ``make``, and ``python2-devel`` installed."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:189
+msgid "Latest Releases Via Apt (Ubuntu)"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:191
+msgid "Ubuntu builds are available `in a PPA here <https://launchpad.net/~ansible/+archive/ansible>`_."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:193
+msgid "To configure the PPA on your machine and install ansible run these commands:"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:202
+msgid "On older Ubuntu distributions, \"software-properties-common\" is called \"python-software-properties\"."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:204
+msgid "Debian/Ubuntu packages can also be built from the source checkout, run:"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:210
+msgid "You may also wish to run from source to get the latest, which is covered above."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:215
+msgid "Latest Releases Via Portage (Gentoo)"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:221
+msgid "To install the newest version, you may need to unmask the ansible package prior to emerging:"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:229
+msgid "If you have Python 3 as a default Python slot on your Gentoo nodes (default setting), then you must set ``ansible_python_interpreter = /usr/bin/python2`` in your group or inventory variables."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:233
+msgid "Latest Releases Via pkg (FreeBSD)"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:239
+msgid "You may also wish to install from ports, run:"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:248
+msgid "Latest Releases on Mac OSX"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:250
+msgid "The preferred way to install ansible on a Mac is via pip."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:252
+msgid "The instructions can be found in `Latest Releases Via Pip`_ section."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:257
+msgid "Latest Releases Via OpenCSW (Solaris)"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:259
+msgid "Ansible is available for Solaris as `SysV package from OpenCSW <https://www.opencsw.org/packages/ansible/>`_."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:269
+msgid "Latest Releases Via Pip"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:271
+msgid "Ansible can be installed via \"pip\", the Python package manager.  If 'pip' isn't already available in your version of Python, you can get pip by::"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:276
+msgid "Then install Ansible with::"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:280
+msgid "If you are installing on OS X Mavericks, you may encounter some noise from your compiler.  A workaround is to do the following::"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:284
+msgid "Readers that use virtualenv can also install Ansible under virtualenv, though we'd recommend to not worry about it and just install Ansible globally.  Do not use easy_install to install ansible directly."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:289
+msgid "Tarballs of Tagged Releases"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:291
+msgid "Packaging Ansible or wanting to build a local package yourself, but don't want to do a git checkout?  Tarballs of releases are available on the `Ansible downloads <http://releases.ansible.com/ansible>`_ page."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:293
+msgid "These releases are also tagged in the `git repository <https://github.com/ansible/ansible/releases>`_ with the release version."
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:297
+msgid ":doc:`intro_adhoc`"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:298
+msgid "Examples of basic commands"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:299
+msgid ":doc:`playbooks`"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:300
+msgid "Learning ansible's configuration management language"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:301
+msgid "`Mailing List <http://groups.google.com/group/ansible-project>`_"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:302
+msgid "Questions? Help? Ideas?  Stop by the list on Google Groups"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:303
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/intro_installation.rst:304
+msgid "#ansible IRC chat channel"
+msgstr ""
+

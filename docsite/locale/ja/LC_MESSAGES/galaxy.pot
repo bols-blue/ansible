@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/galaxy.rst:2
+msgid "Ansible Galaxy"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:4
+msgid "\"Ansible Galaxy\" can either refer to a website for sharing and downloading Ansible roles, or a command line tool that helps work with roles."
+msgstr ""
+
+#: ../../../rst/galaxy.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:9
+msgid "The Website"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:11
+msgid "The website `Ansible Galaxy <http://galaxy.ansible.com>`_, is a free site for finding, downloading, rating, and reviewing all kinds of community developed Ansible roles and can be a great way to get a jumpstart on your automation projects."
+msgstr ""
+
+#: ../../../rst/galaxy.rst:13
+msgid "You can sign up with social auth and use the download client 'ansible-galaxy' which is included in Ansible 1.4.2 and later."
+msgstr ""
+
+#: ../../../rst/galaxy.rst:15
+msgid "Read the \"About\" page on the Galaxy site for more information."
+msgstr ""
+
+#: ../../../rst/galaxy.rst:18
+msgid "The ansible-galaxy command line tool"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:20
+msgid "The command line ansible-galaxy has many different subcommands."
+msgstr ""
+
+#: ../../../rst/galaxy.rst:23
+msgid "Installing Roles"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:25
+msgid "The most obvious is downloading roles from the Ansible Galaxy website::"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:30
+msgid "Building out Role Scaffolding"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:32
+msgid "It can also be used to initialize the base structure of a new role, saving time on creating the various directories and main.yml files a role requires::"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:37
+msgid "Installing Multiple Roles From A File"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:39
+msgid "To install multiple roles, the ansible-galaxy CLI can be fed a requirements file.  All versions of ansible allow the following syntax for installing roles from the Ansible Galaxy website::"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:43
+msgid "Where the requirements.txt looks like::"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:48
+msgid "To request specific versions (tags) of a role, use this syntax in the roles file::"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:53
+msgid "Available versions will be listed on the Ansible Galaxy webpage for that role."
+msgstr ""
+
+#: ../../../rst/galaxy.rst:56
+msgid "Advanced Control over Role Requirements Files"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:58
+msgid "For more advanced control over where to download roles from, including support for remote repositories, Ansible 1.8 and later support a new YAML format for the role requirements file, which must end in a 'yml' extension.  It works like this::"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:62
+msgid "The extension is important. If the .yml extension is left off, the ansible-galaxy CLI will assume the file is in the \"basic\" format and will be confused."
+msgstr ""
+
+#: ../../../rst/galaxy.rst:64
+msgid "And here's an example showing some specific version downloads from multiple sources.  In one of the examples we also override the name of the role and download it as something different::"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:93
+msgid "As you can see in the above, there are a large amount of controls available to customize where roles can be pulled from, and what to save roles as."
+msgstr ""
+
+#: ../../../rst/galaxy.rst:96
+msgid "Roles pulled from galaxy work as with other SCM sourced roles above. To download a role with dependencies, and automatically install those dependencies, the role must be uploaded to the Ansible Galaxy website."
+msgstr ""
+
+#: ../../../rst/galaxy.rst:100
+msgid ":doc:`playbooks_roles`"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:101
+msgid "All about ansible roles"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:102
+msgid "`Mailing List <http://groups.google.com/group/ansible-project>`_"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:103
+msgid "Questions? Help? Ideas?  Stop by the list on Google Groups"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:104
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/galaxy.rst:105
+msgid "#ansible IRC chat channel"
+msgstr ""
+

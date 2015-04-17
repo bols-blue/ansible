@@ -1,0 +1,662 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/playbooks_variables.rst:2
+msgid "Variables"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:6
+msgid "While automation exists to make it easier to make things repeatable, all of your systems are likely not exactly alike."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:8
+msgid "On some systems you may want to set some behavior or configuration that is slightly different from others."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:10
+msgid "Also, some of the observed behavior or state of remote systems might need to influence how you configure those systems.  (Such as you might need to find out the IP address of a system and even use it as a configuration value on another system)."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:14
+msgid "You might have some templates for configuration files that are mostly the same, but slightly different based on those variables."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:16
+msgid "Variables in Ansible are how we deal with differences between systems."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:18
+msgid "To understand variables you'll also want to dig into :doc:`playbooks_conditionals` and :doc:`playbooks_loops`. Useful things like the \"group_by\" module and the \"when\" conditional can also be used with variables, and to help manage differences between systems."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:22
+msgid "It's highly recommended that you consult the ansible-examples github repository to see a lot of examples of variables put to use."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:27
+msgid "What Makes A Valid Variable Name"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:29
+msgid "Before we start using variables it's important to know what are valid variable names."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:31
+msgid "Variable names should be letters, numbers, and underscores.  Variables should always start with a letter."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:33
+msgid "\"foo_port\" is a great variable.  \"foo5\" is fine too."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:35
+msgid "\"foo-port\", \"foo port\", \"foo.port\" and \"12\" are not valid variable names."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:37
+msgid "Easy enough, let's move on."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:42
+msgid "Variables Defined in Inventory"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:44
+msgid "We've actually already covered a lot about variables in another section, so far this shouldn't be terribly new, but a bit of a refresher."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:47
+msgid "Often you'll want to set variables based on what groups a machine is in.  For instance, maybe machines in Boston want to use 'boston.ntp.example.com' as an NTP server."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:50
+msgid "See the :doc:`intro_inventory` document for multiple ways on how to define variables in inventory."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:55
+msgid "Variables Defined in a Playbook"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:57
+msgid "In a playbook, it's possible to define variables directly inline like so::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:63
+msgid "This can be nice as it's right there when you are reading the playbook."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:68
+msgid "Variables defined from included files and roles"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:70
+msgid "It turns out we've already talked about variables in another place too."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:72
+msgid "As described in :doc:`playbooks_roles`, variables can also be included in the playbook via include files, which may or may not be part of an \"Ansible Role\".  Usage of roles is preferred as it provides a nice organizational system."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:78
+msgid "Using Variables: About Jinja2"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:80
+msgid "It's nice enough to know about how to define variables, but how do you use them?"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:82
+msgid "Ansible allows you to reference variables in your playbooks using the Jinja2 templating system.  While you can do a lot of complex things in Jinja, only the basics are things you really need to learn at first."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:86
+msgid "For instance, in a simple template, you can do something like::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:90
+msgid "And that will provide the most basic form of variable substitution."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:92
+msgid "This is also valid directly in playbooks, and you'll occasionally want to do things like::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:96
+msgid "In the above example, we used a variable to help decide where to place a file."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:98
+msgid "Inside a template you automatically have access to all of the variables that are in scope for a host.  Actually it's more than that -- you can also read variables about other hosts.  We'll show how to do that in a bit."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:101
+msgid "ansible allows Jinja2 loops and conditionals in templates, but in playbooks, we do not use them.  Ansible playbooks are pure machine-parseable YAML.  This is a rather important feature as it means it is possible to code-generate pieces of files, or to have other ecosystem tools read Ansible files.  Not everyone will need this but it can unlock possibilities."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:109
+msgid "Jinja2 Filters"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:111
+msgid "These are infrequently utilized features.  Use them if they fit a use case you have, but this is optional knowledge."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:113
+msgid "Filters in Jinja2 are a way of transforming template expressions from one kind of data into another.  Jinja2 ships with many of these. See `builtin filters`_ in the official Jinja2 template documentation."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:116
+msgid "In addition to those, Ansible supplies many more. See the :doc:`playbooks_filters` document for a list of available filters and example usage guide."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:122
+msgid "Hey Wait, A YAML Gotcha"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:124
+msgid "YAML syntax requires that if you start a value with {{ foo }} you quote the whole line, since it wants to be sure you aren't trying to start a YAML dictionary.  This is covered on the :doc:`YAMLSyntax` page."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:127
+msgid "This won't work::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:133
+msgid "Do it like this and you'll be fine::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:142
+msgid "Information discovered from systems: Facts"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:144
+msgid "There are other places where variables can come from, but these are a type of variable that are discovered, not set by the user."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:146
+msgid "Facts are information derived from speaking with your remote systems."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:148
+msgid "An example of this might be the ip address of the remote host, or what the operating system is."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:150
+msgid "To see what information is available, try the following::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:154
+msgid "This will return a ginormous amount of variable data, which may look like this, as taken from Ansible 1.4 on a Ubuntu 12.04 system::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:384
+msgid "In the above the model of the first harddrive may be referenced in a template or playbook as::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:388
+msgid "Similarly, the hostname as the system reports it is::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:393
+msgid "Facts are frequently used in conditionals (see :doc:`playbooks_conditionals`) and also in templates."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:395
+msgid "Facts can be also used to create dynamic groups of hosts that match particular criteria, see the :doc:`modules` documentation on 'group_by' for details, as well as in generalized conditional statements as discussed in the :doc:`playbooks_conditionals` chapter."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:400
+msgid "Turning Off Facts"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:402
+msgid "If you know you don't need any fact data about your hosts, and know everything about your systems centrally, you can turn off fact gathering.  This has advantages in scaling Ansible in push mode with very large numbers of systems, mainly, or if you are using Ansible on experimental platforms.   In any play, just do this::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:412
+msgid "Local Facts (Facts.d)"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:416
+msgid "As discussed in the playbooks chapter, Ansible facts are a way of getting data about remote systems for use in playbook variables."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:418
+msgid "Usually these are discovered automatically by the 'setup' module in Ansible. Users can also write custom facts modules, as described in the API guide.  However, what if you want to have a simple way to provide system or user provided data for use in Ansible variables, without writing a fact module?"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:422
+msgid "For instance, what if you want users to be able to control some aspect about how their systems are managed? \"Facts.d\" is one such mechanism."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:424
+msgid "Perhaps \"local facts\" is a bit of a misnomer, it means \"locally supplied user values\" as opposed to \"centrally supplied user values\", or what facts are -- \"locally dynamically determined values\"."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:426
+msgid "If a remotely managed system has an \"/etc/ansible/facts.d\" directory, any files in this directory ending in \".fact\", can be JSON, INI, or executable files returning JSON, and these can supply local facts in Ansible."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:429
+msgid "For instance assume a /etc/ansible/facts.d/preferences.fact::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:435
+msgid "This will produce a hash variable fact named \"general\" with 'asdf' and 'bar' as members. To validate this, run the following::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:440
+msgid "And you will see the following fact added::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:451
+msgid "And this data can be accessed in a template/playbook as::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:455
+msgid "The local namespace prevents any user supplied fact from overriding system facts or variables defined elsewhere in the playbook."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:458
+msgid "If you have a playbook that is copying over a custom fact and then running it, making an explicit call to re-run the setup module can allow that fact to be used during that particular play.  Otherwise, it will be available in the next play that gathers fact information. Here is an example of what that might look like::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:471
+msgid "In this pattern however, you could also write a fact module as well, and may wish to consider this as an option."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:476
+msgid "Fact Caching"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:480
+msgid "As shown elsewhere in the docs, it is possible for one server to reference variables about another, like so::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:484
+msgid "With \"Fact Caching\" disabled, in order to do this, Ansible must have already talked to 'asdf.example.com' in the current play, or another play up higher in the playbook.  This is the default configuration of ansible."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:487
+msgid "To avoid this, Ansible 1.8 allows the ability to save facts between playbook runs, but this feature must be manually enabled.  Why might this be useful?"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:490
+msgid "Imagine, for instance, a very large infrastructure with thousands of hosts.  Fact caching could be configured to run nightly, but configuration of a small set of servers could run ad-hoc or periodically throughout the day.  With fact-caching enabled, it would not be necessary to \"hit\" all servers to reference variables and information about them."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:494
+msgid "With fact caching enabled, it is possible for machine in one group to reference variables about machines in the other group, despite the fact that they have not been communicated with in the current execution of /usr/bin/ansible-playbook."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:497
+msgid "To configure fact caching, enable it in ansible.cfg as follows::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:505
+msgid "You might also want to change the 'gathering' setting to 'smart' or 'explicit' or set gather_facts to False in most plays."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:507
+msgid "At the time of writing, Redis is the only supported fact caching engine. To get redis up and running, perform the equivalent OS commands::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:514
+msgid "Note that the Python redis library should be installed from pip, the version packaged in EPEL is too old for use by Ansible."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:516
+msgid "In current embodiments, this feature is in beta-level state and the Redis plugin does not support port or password configuration, this is expected to change in the near future."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:521
+msgid "Registered Variables"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:523
+msgid "Another major use of variables is running a command and using the result of that command to save the result into a variable. Results will vary from module to module. Use of -v when executing playbooks will show possible values for the results."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:525
+msgid "The value of a task being executed in ansible can be saved in a variable and used later.  See some examples of this in the :doc:`playbooks_conditionals` chapter."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:528
+msgid "While it's mentioned elsewhere in that document too, here's a quick syntax example::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:541
+msgid "Registered variables are valid on the host the remainder of the playbook run, which is the same as the lifetime of \"facts\" in Ansible.  Effectively registered variables are just like facts."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:547
+msgid "Accessing Complex Variable Data"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:549
+msgid "We already talked about facts a little higher up in the documentation."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:551
+msgid "Some provided facts, like networking information, are made available as nested data structures.  To access them a simple {{ foo }} is not sufficient, but it is still easy to do.   Here's how we get an IP address::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:556
+msgid "OR alternatively::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:560
+msgid "Similarly, this is how we access the first element of an array::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:567
+msgid "Magic Variables, and How To Access Information About Other Hosts"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:569
+msgid "Even if you didn't define them yourself, Ansible provides a few variables for you automatically. The most important of these are 'hostvars', 'group_names', and 'groups'.  Users should not use these names themselves as they are reserved.  'environment' is also reserved."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:573
+msgid "Hostvars lets you ask about the variables of another host, including facts that have been gathered about that host.  If, at this point, you haven't talked to that host yet in any play in the playbook or set of playbooks, you can get at the variables, but you will not be able to see the facts."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:577
+msgid "If your database server wants to use the value of a 'fact' from another node, or an inventory variable assigned to another node, it's easy to do so within a template or even an action line::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:582
+msgid "Additionally, *group_names* is a list (array) of all the groups the current host is in.  This can be used in templates using Jinja2 syntax to make template source files that vary based on the group membership (or role) of the host::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:588
+msgid "*groups* is a list of all the groups (and hosts) in the inventory.  This can be used to enumerate all hosts within a group. For example::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:595
+msgid "A frequently used idiom is walking a group to find all IP addresses in that group::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:601
+msgid "An example of this could include pointing a frontend proxy server to all of the app servers, setting up the correct firewall rules between servers, etc. You need to make sure that the facts of those hosts have been populated before though, for example by running a play against them if the facts have not been cached recently (fact caching was added in Ansible 1.8)."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:604
+msgid "Additionally, *inventory_hostname* is the name of the hostname as configured in Ansible's inventory host file.  This can be useful for when you don't want to rely on the discovered hostname `ansible_hostname` or for other mysterious reasons.  If you have a long FQDN, *inventory_hostname_short* also contains the part up to the first period, without the rest of the domain."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:609
+msgid "*play_hosts* is available as a list of hostnames that are in scope for the current play. This may be useful for filling out templates with multiple hostnames or for injecting the list into the rules for a load balancer."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:611
+msgid "*delegate_to* is the inventory hostname of the host that the current task has been delegated to using 'delegate_to'."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:613
+msgid "Don't worry about any of this unless you think you need it.  You'll know when you do."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:615
+msgid "Also available, *inventory_dir* is the pathname of the directory holding Ansible's inventory host file, *inventory_file* is the pathname and the filename pointing to the Ansible's inventory host file."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:620
+msgid "Variable File Separation"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:622
+msgid "It's a great idea to keep your playbooks under source control, but you may wish to make the playbook source public while keeping certain important variables private.  Similarly, sometimes you may just want to keep certain information in different files, away from the main playbook."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:628
+msgid "You can do this by using an external variables file, or files, just like this::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:644
+msgid "This removes the risk of sharing sensitive data with others when sharing your playbook source with them."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:647
+msgid "The contents of each variables file is a simple YAML dictionary, like this::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:655
+msgid "It's also possible to keep per-host and per-group variables in very similar files, this is covered in :ref:`splitting_out_vars`."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:661
+msgid "Passing Variables On The Command Line"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:663
+msgid "In addition to `vars_prompt` and `vars_files`, it is possible to send variables over the Ansible command line.  This is particularly useful when writing a generic release playbook where you may want to pass in the version of the application to deploy::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:669
+msgid "This is useful, for, among other things, setting the hosts group or the user for the playbook."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:671
+msgid "Example::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:683
+msgid "As of Ansible 1.2, you can also pass in extra vars as quoted JSON, like so::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:687
+msgid "The key=value form is obviously simpler, but it's there if you need it!"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:689
+msgid "As of Ansible 1.3, extra vars can be loaded from a JSON file with the \"@\" syntax::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:693
+msgid "Also as of Ansible 1.3, extra vars can be formatted as YAML, either on the command line or in a file as above."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:699
+msgid "Variable Precedence: Where Should I Put A Variable?"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:701
+msgid "A lot of folks may ask about how variables override another.  Ultimately it's Ansible's philosophy that it's better you know where to put a variable, and then you have to think about it a lot less."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:704
+msgid "Avoid defining the variable \"x\" in 47 places and then ask the question \"which x gets used\". Why?  Because that's not Ansible's Zen philosophy of doing things."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:707
+msgid "There is only one Empire State Building. One Mona Lisa, etc.  Figure out where to define a variable, and don't make it complicated."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:710
+msgid "However, let's go ahead and get precedence out of the way!  It exists.  It's a real thing, and you might have a use for it."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:713
+msgid "If multiple variables of the same name are defined in different places, they win in a certain order, which is::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:722
+msgid "In versions prior to 1.5.4, facts discovered about a system were in the \"most everything else\" category above."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:724
+msgid "That seems a little theoretical.  Let's show some examples and where you would choose to put what based on the kind of control you might want over values."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:727
+msgid "First off, group variables are super powerful."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:729
+msgid "Site wide defaults should be defined as a 'group_vars/all' setting.  Group variables are generally placed alongside your inventory file.  They can also be returned by a dynamic inventory script (see :doc:`intro_dynamic_inventory`) or defined in things like :doc:`tower` from the UI or API::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:738
+msgid "Regional information might be defined in a 'group_vars/region' variable.  If this group is a child of the 'all' group (which it is, because all groups are), it will override the group that is higher up and more general::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:744
+msgid "If for some crazy reason we wanted to tell just a specific host to use a specific NTP server, it would then override the group variable!::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:750
+msgid "So that covers inventory and what you would normally set there.  It's a great place for things that deal with geography or behavior.  Since groups are frequently the entity that maps roles onto hosts, it is sometimes a shortcut to set variables on the group instead of defining them on a role.  You could go either way."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:752
+msgid "Remember:  Child groups override parent groups, and hosts always override their groups."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:754
+msgid "Next up: learning about role variable precedence."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:756
+msgid "We'll pretty much assume you are using roles at this point.  You should be using roles for sure.  Roles are great.  You are using roles aren't you?  Hint hint."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:759
+msgid "Ok, so if you are writing a redistributable role with reasonable defaults, put those in the 'roles/x/defaults/main.yml' file.  This means the role will bring along a default value but ANYTHING in Ansible will override it.  It's just a default.  That's why it says \"defaults\" :) See :doc:`playbooks_roles` for more info about this::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:768
+msgid "if you are writing a role and want to ensure the value in the role is absolutely used in that role, and is not going to be overridden by inventory, you should put it in roles/x/vars/main.yml like so, and inventory values cannot override it.  -e however, still will::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:776
+msgid "So the above is a great way to plug in constants about the role that are always true.  If you are not sharing your role with others, app specific behaviors like ports is fine to put in here.  But if you are sharing roles with others, putting variables in here might be bad. Nobody will be able to override them with inventory, but they still can by passing a parameter to the role."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:780
+msgid "Parameterized roles are useful."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:782
+msgid "If you are using a role and want to override a default, pass it as a parameter to the role like so::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:787
+msgid "This makes it clear to the playbook reader that you've made a conscious choice to override some default in the role, or pass in some configuration that the role can't assume by itself.  It also allows you to pass something site-specific that isn't really part of the role you are sharing with others."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:791
+msgid "This can often be used for things that might apply to some hosts multiple times, like so::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:800
+msgid "That's a bit arbitrary, but you can see how the same role was invoked multiple Times.  In that example it's quite likely there was no default for 'name' supplied at all.  Ansible can yell at you when variables aren't defined -- it's the default behavior in fact."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:803
+msgid "So that's a bit about roles."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:805
+msgid "There are a few bonus things that go on with roles."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:807
+msgid "Generally speaking, variables set in one role are available to others.  This means if you have a \"roles/common/vars/main.yml\" you can set variables in there and make use of them in other roles and elsewhere in your playbook::"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:815
+msgid "There are some protections in place to avoid the need to namespace variables. In the above, variables defined in common_settings are most definitely available to 'something' and 'something_else' tasks, but if \"something's\" guaranteed to have foo set at 12, even if somewhere deep in common settings it set foo to 20."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:819
+msgid "So, that's precedence, explained in a more direct way.  Don't worry about precedence, just think about if your role is defining a variable that is a default, or a \"live\" variable you definitely want to use.  Inventory lies in precedence right in the middle, and if you want to forcibly override something, use -e."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:823
+msgid "If you found that a little hard to understand, take a look at the `ansible-examples`_ repo on our github for a bit more about how all of these things can work together."
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:831
+msgid ":doc:`playbooks`"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:832
+msgid "An introduction to playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:833
+msgid ":doc:`playbooks_conditionals`"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:834
+msgid "Conditional statements in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:835
+msgid ":doc:`playbooks_filters`"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:836
+msgid "Jinja2 filters and their uses"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:837
+msgid ":doc:`playbooks_loops`"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:838
+msgid "Looping in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:839
+msgid ":doc:`playbooks_roles`"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:840
+msgid "Playbook organization by roles"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:841
+msgid ":doc:`playbooks_best_practices`"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:842
+msgid "Best practices in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:843
+msgid "`User Mailing List <http://groups.google.com/group/ansible-devel>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:844
+msgid "Have a question?  Stop by the google group!"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:845
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_variables.rst:846
+msgid "#ansible IRC chat channel"
+msgstr ""
+

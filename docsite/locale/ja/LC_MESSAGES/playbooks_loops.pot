@@ -1,0 +1,326 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/playbooks_loops.rst:2
+msgid "Loops"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:4
+msgid "Often you'll want to do many things in one task, such as create a lot of users, install a lot of packages, or repeat a polling step until a certain result is reached."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:7
+msgid "This chapter is all about how to use loops in playbooks."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:14
+msgid "Standard Loops"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:16
+msgid "To save some typing, repeated tasks can be written in short-hand like so::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:24
+msgid "If you have defined a YAML list in a variables file, or the 'vars' section, you can also do::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:28
+msgid "The above would be the equivalent of::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:35
+msgid "The yum and apt modules use with_items to execute fewer package manager transactions."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:37
+msgid "Note that the types of items you iterate over with 'with_items' do not have to be simple lists of strings. If you have a list of hashes, you can reference subkeys using things like::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:46
+msgid "Also be aware that when combining `when` with `with_items` (or any other loop statement), the `when` statement is processed separately for each item. See :ref:`the_when_statement` for an example."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:51
+msgid "Nested Loops"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:53
+msgid "Loops can be nested as well::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:61
+msgid "As with the case of 'with_items' above, you can use previously defined variables. Just specify the variable's name without templating it with '{{ }}'::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:72
+msgid "Looping over Hashes"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:76
+msgid "Suppose you have the following variable::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:87
+msgid "And you want to print every user's name and phone number.  You can loop through the elements of a hash using ``with_dict`` like this::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:97
+msgid "Looping over Fileglobs"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:99
+msgid "``with_fileglob`` matches all files in a single directory, non-recursively, that match a pattern.  It can be used like this::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:115
+msgid "When using a relative path with ``with_fileglob`` in a role, Ansible resolves the path relative to the `roles/<rolename>/files` directory."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:118
+msgid "Looping over Parallel Sets of Data"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:120
+#: ../../../rst/playbooks_loops.rst:249
+#: ../../../rst/playbooks_loops.rst:280
+#: ../../../rst/playbooks_loops.rst:308
+#: ../../../rst/playbooks_loops.rst:324
+msgid "This is an uncommon thing to want to do, but we're documenting it for completeness.  You probably won't be reaching for this one often."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:122
+msgid "Suppose you have the following variable data was loaded in via somewhere::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:128
+msgid "And you want the set of '(a, 1)' and '(b, 2)' and so on.   Use 'with_together' to get this::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:137
+msgid "Looping over Subelements"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:139
+msgid "Suppose you want to do something like loop over a list of users, creating them, and allowing them to login by a certain set of SSH keys."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:142
+msgid "How might that be accomplished?  Let's assume you had the following defined and loaded in via \"vars_files\" or maybe a \"group_vars/all\" file::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:154
+msgid "It might happen like so::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:164
+msgid "Subelements walks a list of hashes (aka dictionaries) and then traverses a list with a given key inside of those records."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:167
+msgid "The authorized_key pattern is exactly where it comes up most."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:172
+msgid "Looping over Integer Sequences"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:174
+msgid "``with_sequence`` generates a sequence of items in ascending numerical order. You can specify a start, end, and an optional step value."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:177
+msgid "Arguments should be specified in key=value pairs.  If supplied, the 'format' is a printf style string."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:179
+msgid "Numerical values can be specified in decimal, hexadecimal (0x3f8) or octal (0600). Negative numbers are not supported.  This works as follows::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:207
+msgid "Random Choices"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:209
+msgid "The 'random_choice' feature can be used to pick something at random.  While it's not a load balancer (there are modules for those), it can somewhat be used as a poor man's loadbalancer in a MacGyver like situation::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:219
+msgid "One of the provided strings will be selected at random."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:221
+msgid "At a more basic level, they can be used to add chaos and excitement to otherwise predictable automation environments."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:226
+msgid "Do-Until Loops"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:230
+msgid "Sometimes you would want to retry a task until a certain condition is met.  Here's an example::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:238
+msgid "The above example run the shell module recursively till the module's result has \"all systems go\" in its stdout or the task has been retried for 5 times with a delay of 10 seconds. The default value for \"retries\" is 3 and \"delay\" is 5."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:241
+msgid "The task returns the results returned by the last task run. The results of individual retries can be viewed by -vv option. The registered variable will also have a new key \"attempts\" which will have the number of the retries for the task."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:247
+msgid "Finding First Matched Files"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:251
+msgid "This isn't exactly a loop, but it's close.  What if you want to use a reference to a file based on the first file found that matches a given criteria, and some of the filenames are determined by variable names?  Yes, you can do that as follows::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:260
+msgid "This tool also has a long form version that allows for configurable search paths.  Here's an example::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:278
+msgid "Iterating Over The Results of a Program Execution"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:282
+msgid "Sometimes you might want to execute a program, and based on the output of that program, loop over the results of that line by line. Ansible provides a neat way to do that, though you should remember, this is always executed on the control machine, not the local machine::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:290
+msgid "Ok, that was a bit arbitrary.  In fact, if you're doing something that is inventory related you might just want to write a dynamic inventory source instead (see :doc:`intro_dynamic_inventory`), but this can be occasionally useful in quick-and-dirty implementations."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:293
+msgid "Should you ever need to execute a command remotely, you would not use the above method.  Instead do this::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:306
+msgid "Looping Over A List With An Index"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:312
+msgid "If you want to loop over an array and also get the numeric index of where you are in the array as you go, you can also do that. It's uncommonly used::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:322
+msgid "Flattening A List"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:326
+msgid "In rare instances you might have several lists of lists, and you just want to iterate over every item in all of those lists.  Assume a really crazy hypothetical datastructure::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:337
+msgid "As you can see the formatting of packages in these lists is all over the place.  How can we install all of the packages in both lists?::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:345
+msgid "That's how!"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:350
+msgid "Using register with a loop"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:352
+msgid "When using ``register`` with a loop the data structure placed in the variable during a loop, will contain a ``results`` attribute, that is a list of all responses from the module."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:354
+msgid "Here is an example of using ``register`` with ``with_items``::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:362
+msgid "This differs from the data structure returned when using ``register`` without a loop::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:401
+msgid "Subsequent loops over the registered variable to inspect the results may look like::"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:412
+msgid "Writing Your Own Iterators"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:414
+msgid "While you ordinarily shouldn't have to, should you wish to write your own ways to loop over arbitrary datastructures, you can read :doc:`developing_plugins` for some starter information.  Each of the above features are implemented as plugins in ansible, so there are many implementations to reference."
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:419
+msgid ":doc:`playbooks`"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:420
+msgid "An introduction to playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:421
+msgid ":doc:`playbooks_roles`"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:422
+msgid "Playbook organization by roles"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:423
+msgid ":doc:`playbooks_best_practices`"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:424
+msgid "Best practices in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:425
+msgid ":doc:`playbooks_conditionals`"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:426
+msgid "Conditional statements in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:427
+msgid ":doc:`playbooks_variables`"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:428
+msgid "All about variables"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:429
+msgid "`User Mailing List <http://groups.google.com/group/ansible-devel>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:430
+msgid "Have a question?  Stop by the google group!"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:431
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_loops.rst:432
+msgid "#ansible IRC chat channel"
+msgstr ""
+

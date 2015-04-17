@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/developing_plugins.rst:2
+msgid "Developing Plugins"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:6
+msgid "Ansible is pluggable in a lot of other ways separate from inventory scripts and callbacks.  Many of these features are there to cover fringe use cases and are infrequently needed, and others are pluggable simply because they are there to implement core features in ansible and were most convenient to be made pluggable."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:9
+msgid "This section will explore these features, though they are generally not common in terms of things people would look to extend quite as often."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:15
+msgid "Connection Type Plugins"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:17
+msgid "By default, ansible ships with a 'paramiko' SSH, native ssh (just called 'ssh'), 'local' connection type, and there are also some minor players like 'chroot' and 'jail'.  All of these can be used in playbooks and with /usr/bin/ansible to decide how you want to talk to remote machines.  The basics of these connection types are covered in the :doc:`intro_getting_started` section.  Should you want to extend Ansible to support other transports (SNMP? Message bus? Carrier Pigeon?) it's as simple as copying the format of one of the existing modules and dropping it into the connection plugins directory.   The value of 'smart' for a connection allows selection of paramiko or openssh based on system capabilities, and chooses 'ssh' if OpenSSH supports ControlPersist, in Ansible 1.2.1 an later.  Previous versions did not support 'smart'."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:24
+msgid "More documentation on writing connection plugins is pending, though you can jump into `lib/ansible/runner/connection_plugins <https://github.com/ansible/ansible/tree/devel/lib/ansible/runner/connection_plugins>`_ and figure things out pretty easily."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:29
+msgid "Lookup Plugins"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:31
+msgid "Language constructs like \"with_fileglob\" and \"with_items\" are implemented via lookup plugins.  Just like other plugin types, you can write your own."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:33
+msgid "More documentation on writing lookup plugins is pending, though you can jump into `lib/ansible/runner/lookup_plugins <https://github.com/ansible/ansible/tree/devel/lib/ansible/runner/lookup_plugins>`_ and figure things out pretty easily."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:39
+msgid "Vars Plugins"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:41
+msgid "Playbook constructs like 'host_vars' and 'group_vars' work via 'vars' plugins.  They inject additional variable data into ansible runs that did not come from an inventory, playbook, or command line.  Note that variables can also be returned from inventory, so in most cases, you won't need to write or understand vars_plugins."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:45
+msgid "More documentation on writing vars plugins is pending, though you can jump into `lib/ansible/inventory/vars_plugins <https://github.com/ansible/ansible/tree/devel/lib/ansible/inventory/vars_plugins>`_ and figure things out pretty easily."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:48
+msgid "If you find yourself wanting to write a vars_plugin, it's more likely you should write an inventory script instead."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:53
+msgid "Filter Plugins"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:55
+msgid "If you want more Jinja2 filters available in a Jinja2 template (filters like to_yaml and to_json are provided by default), they can be extended by writing a filter plugin.  Most of the time, when someone comes up with an idea for a new filter they would like to make available in a playbook, we'll just include them in 'core.py' instead."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:57
+msgid "Jump into `lib/ansible/runner/filter_plugins/ <https://github.com/ansible/ansible/tree/devel/lib/ansible/runner/filter_plugins>`_ for details."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:62
+msgid "Callbacks"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:64
+msgid "Callbacks are one of the more interesting plugin types.  Adding additional callback plugins to Ansible allows for adding new behaviors when responding to events."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:69
+msgid "Examples"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:71
+msgid "Example callbacks are shown in `plugins/callbacks <https://github.com/ansible/ansible/tree/devel/plugins/callbacks>`_."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:73
+msgid "The `log_plays <https://github.com/ansible/ansible/blob/devel/plugins/callbacks/log_plays.py>`_ callback is an example of how to intercept playbook events to a log file, and the `mail <https://github.com/ansible/ansible/blob/devel/plugins/callbacks/mail.py>`_ callback sends email when playbooks complete."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:80
+msgid "The `osx_say <https://github.com/ansible/ansible/blob/devel/plugins/callbacks/osx_say.py>`_ callback provided is particularly entertaining -- it will respond with computer synthesized speech on OS X in relation to playbook events, and is guaranteed to entertain and/or annoy coworkers."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:89
+msgid "Configuring"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:91
+msgid "To activate a callback drop it in a callback directory as configured in :ref:`ansible.cfg <callback_plugins>`."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:96
+msgid "Development"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:98
+msgid "More information will come later, though see the source of any of the existing callbacks and you should be able to get started quickly. They should be reasonably self-explanatory."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:104
+msgid "Distributing Plugins"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:106
+msgid "Plugins are loaded from both Python's site_packages (those that ship with ansible) and a configured plugins directory, which defaults to /usr/share/ansible/plugins, in a subfolder for each plugin type::"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:116
+msgid "To change this path, edit the ansible configuration file."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:118
+msgid "In addition, plugins can be shipped in a subdirectory relative to a top-level playbook, in folders named the same as indicated above."
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:122
+msgid ":doc:`modules`"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:123
+msgid "List of built-in modules"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:124
+msgid ":doc:`developing_api`"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:125
+msgid "Learn about the Python API for task execution"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:126
+msgid ":doc:`developing_inventory`"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:127
+msgid "Learn about how to develop dynamic inventory sources"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:128
+msgid ":doc:`developing_modules`"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:129
+msgid "Learn about how to write Ansible modules"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:130
+msgid "`Mailing List <http://groups.google.com/group/ansible-devel>`_"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:131
+msgid "The development mailing list"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:132
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/developing_plugins.rst:133
+msgid "#ansible IRC chat channel"
+msgstr ""
+

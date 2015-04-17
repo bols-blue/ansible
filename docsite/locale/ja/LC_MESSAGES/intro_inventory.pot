@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/intro_inventory.rst:4
+msgid "Inventory"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:8
+msgid "Ansible works against multiple systems in your infrastructure at the same time.  It does this by selecting portions of systems listed in Ansible's inventory file, which defaults to being saved in the location /etc/ansible/hosts."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:13
+msgid "Not only is this inventory configurable, but you can also use multiple inventory files at the same time (explained below) and also pull inventory from dynamic or cloud sources, as described in :doc:`intro_dynamic_inventory`."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:20
+msgid "Hosts and Groups"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:22
+msgid "The format for /etc/ansible/hosts is an INI-like format and looks like this::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:35
+msgid "The things in brackets are group names, which are used in classifying systems and deciding what systems you are controlling at what times and for what purpose."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:38
+msgid "It is ok to put systems in more than one group, for instance a server could be both a webserver and a dbserver. If you do, note that variables will come from all of the groups they are a member of, and variable precedence is detailed in a later chapter."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:41
+msgid "If you have hosts that run on non-standard SSH ports you can put the port number after the hostname with a colon.  Ports listed in your SSH config file won't be used with the paramiko connection but will be used with the openssh connection."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:45
+msgid "To make things explicit, it is suggested that you set them if things are not running on the default port::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:49
+msgid "Suppose you have just static IPs and want to set up some aliases that don't live in your host file, or you are connecting through tunnels.  You can do things like this::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:53
+msgid "In the above example, trying to ansible against the host alias \"jumper\" (which may not even be a real hostname) will contact 192.168.1.50 on port 5555.  Note that this is using a feature of the inventory file to define some special variables.  Generally speaking this is not the best way to define variables that describe your system policy, but we'll share suggestions on doing this later.  We're just getting started."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:56
+msgid "Adding a lot of hosts?  If you have a lot of hosts following similar patterns you can do this rather than listing each hostname::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:62
+msgid "For numeric patterns, leading zeros can be included or removed, as desired. Ranges are inclusive.  You can also define alphabetic ranges::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:67
+msgid "You can also select the connection type and user on a per host basis::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:75
+msgid "As mentioned above, setting these in the inventory file is only a shorthand, and we'll discuss how to store them in individual files in the 'host_vars' directory a bit later on."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:81
+msgid "Host Variables"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:83
+msgid "As alluded to above, it is easy to assign variables to hosts that will be used later in playbooks::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:92
+msgid "Group Variables"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:94
+msgid "Variables can also be applied to an entire group at once::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:107
+msgid "Groups of Groups, and Group Variables"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:109
+msgid "It is also possible to make groups of groups and assign variables to groups.  These variables can be used by /usr/bin/ansible-playbook, but not /usr/bin/ansible::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:137
+msgid "If you need to store lists or hash data, or prefer to keep host and group specific variables separate from the inventory file, see the next section."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:143
+msgid "Splitting Out Host and Group Specific Data"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:145
+msgid "The preferred practice in Ansible is actually not to store variables in the main inventory file."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:147
+msgid "In addition to storing variables directly in the INI file, host and group variables can be stored in individual files relative to the inventory file."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:151
+msgid "These variable files are in YAML format.  See :doc:`YAMLSyntax` if you are new to YAML."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:153
+msgid "Assuming the inventory file path is::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:157
+msgid "If the host is named 'foosball', and in groups 'raleigh' and 'webservers', variables in YAML files at the following locations will be made available to the host::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:164
+msgid "For instance, suppose you have hosts grouped by datacenter, and each datacenter uses some different servers.  The data in the groupfile '/etc/ansible/group_vars/raleigh' for the 'raleigh' group might look like::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:172
+msgid "It is ok if these files do not exist, as this is an optional feature."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:174
+msgid "As an advanced use-case, you can create *directories* named after your groups or hosts, and Ansible will read all the files in these directories. An example with the 'raleigh' group::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:180
+msgid "All hosts that are in the 'raleigh' group will have the variables defined in these files available to them. This can be very useful to keep your variables organized when a single file starts to be too big, or when you want to use :doc:`Ansible Vault<playbooks_vault>` on a part of a group's variables. Note that this only works on Ansible 1.4 or later."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:185
+msgid "Tip: In Ansible 1.2 or later the group_vars/ and host_vars/ directories can exist in either the playbook directory OR the inventory directory. If both paths exist, variables in the playbook directory will override variables set in the inventory directory."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:189
+msgid "Tip: Keeping your inventory file and variables in a git repo (or other version control) is an excellent way to track changes to your inventory and host variables."
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:195
+msgid "List of Behavioral Inventory Parameters"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:197
+msgid "As alluded to above, setting the following variables controls how ansible interacts with remote hosts. Some we have already mentioned::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:230
+msgid "Examples from a host file::"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:240
+msgid ":doc:`intro_dynamic_inventory`"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:241
+msgid "Pulling inventory from dynamic sources, such as cloud providers"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:242
+msgid ":doc:`intro_adhoc`"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:243
+msgid "Examples of basic commands"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:244
+msgid ":doc:`playbooks`"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:245
+msgid "Learning ansible's configuration management language"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:246
+msgid "`Mailing List <http://groups.google.com/group/ansible-project>`_"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:247
+msgid "Questions? Help? Ideas?  Stop by the list on Google Groups"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:248
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/intro_inventory.rst:249
+msgid "#ansible IRC chat channel"
+msgstr ""
+

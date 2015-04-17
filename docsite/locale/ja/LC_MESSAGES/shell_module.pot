@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/shell_module.rst:5
+msgid "shell - Execute commands in nodes."
+msgstr ""
+
+#: ../../../rst/shell_module.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../rst/shell_module.rst:17
+msgid "The ``shell`` module takes the command name followed by a list of space-delimited arguments. It is almost exactly like the ``command`` module but runs the command through a shell (``/bin/sh``) on the remote node."
+msgstr ""
+
+#: ../../../rst/shell_module.rst:20
+msgid "Options"
+msgstr ""
+
+#: ../../../rst/shell_module.rst:78
+msgid "Examples"
+msgstr ""
+
+#: ../../../rst/shell_module.rst:104
+msgid "If you want to execute a command securely and predictably, it may be better to use the ``command`` module instead. Best practices when writing playbooks will follow the trend of using ``command`` unless ``shell`` is explicitly required. When running ad-hoc commands, use your best judgement."
+msgstr ""
+
+#: ../../../rst/shell_module.rst:105
+msgid "To sanitize any variables passed to the shell module, you should use \"{{ var | quote }}\" instead of just \"{{ var }}\" to make sure they don't include evil things like semicolons."
+msgstr ""
+
+#: ../../../rst/shell_module.rst:110
+msgid "This is a Core Module"
+msgstr ""
+
+#: ../../../rst/shell_module.rst:112
+msgid "The source of this module is hosted on GitHub in the `ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ repo."
+msgstr ""
+
+#: ../../../rst/shell_module.rst:114
+msgid "If you believe you have found a bug in this module, and are already running the latest stable or development version of Ansible, first look in the `issue tracker at github.com/ansible/ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ to see if a bug has already been filed.  If not, we would be grateful if you would file one."
+msgstr ""
+
+#: ../../../rst/shell_module.rst:116
+msgid "Should you have a question rather than a bug report, inquries are welcome on the `ansible-project google group <https://groups.google.com/forum/#!forum/ansible-project>`_ or on Ansible's \"#ansible\" channel, located on irc.freenode.net.   Development oriented topics should instead use the similar `ansible-devel google group <https://groups.google.com/forum/#!forum/ansible-devel>`_."
+msgstr ""
+
+#: ../../../rst/shell_module.rst:118
+msgid "Documentation updates for this module can also be edited directly by submitting a pull request to the module source code, just look for the \"DOCUMENTATION\" block in the source tree."
+msgstr ""
+
+#: ../../../rst/shell_module.rst:120
+msgid "This is a \"core\" ansible module, which means it will receive slightly higher priority for all requests than those in the \"extras\" repos."
+msgstr ""
+
+#: ../../../rst/shell_module.rst:123
+msgid "For help in developing on modules, should you be so inclined, please read :doc:`community`, :doc:`developing_test_pr` and :doc:`developing_modules`."
+msgstr ""
+

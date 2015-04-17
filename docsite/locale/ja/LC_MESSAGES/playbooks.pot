@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/playbooks.rst:2
+msgid "Playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks.rst:4
+msgid "Playbooks are Ansible's configuration, deployment, and orchestration language.  They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process."
+msgstr ""
+
+#: ../../../rst/playbooks.rst:6
+msgid "If Ansible modules are the tools in your workshop, playbooks are your design plans."
+msgstr ""
+
+#: ../../../rst/playbooks.rst:8
+msgid "At a basic level, playbooks can be used to manage configurations of and deployments to remote machines.  At a more advanced level, they can sequence multi-tier rollouts involving rolling updates, and can delegate actions to other hosts, interacting with monitoring servers and load balancers along the way."
+msgstr ""
+
+#: ../../../rst/playbooks.rst:10
+msgid "While there's a lot of information here, there's no need to learn everything at once.  You can start small and pick up more features over time as you need them."
+msgstr ""
+
+#: ../../../rst/playbooks.rst:13
+msgid "Playbooks are designed to be human-readable and are developed in a basic text language.  There are multiple ways to organize playbooks and the files they include, and we'll offer up some suggestions on that and making the most out of Ansible."
+msgstr ""
+
+#: ../../../rst/playbooks.rst:16
+msgid "It is recommended to look at `Example Playbooks <https://github.com/ansible/ansible-examples>`_ while reading along with the playbook documentation.  These illustrate best practices as well as how to put many of the various concepts together."
+msgstr ""
+

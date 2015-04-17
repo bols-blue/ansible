@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/acl_module.rst:5
+msgid "acl - Sets and retrieves file ACL information."
+msgstr ""
+
+#: ../../../rst/acl_module.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../rst/acl_module.rst:18
+msgid "Sets and retrieves file ACL information."
+msgstr ""
+
+#: ../../../rst/acl_module.rst:21
+msgid "Options"
+msgstr ""
+
+#: ../../../rst/acl_module.rst:93
+msgid "Examples"
+msgstr ""
+
+#: ../../../rst/acl_module.rst:120
+msgid "Return Values"
+msgstr ""
+
+#: ../../../rst/acl_module.rst:122
+msgid "Common return values are documented here :doc:`common_return_values`, the following are the fields unique to this module:"
+msgstr ""
+
+#: ../../../rst/acl_module.rst:146
+msgid "The \"acl\" module requires that acls are enabled on the target filesystem and that the setfacl and getfacl binaries are installed."
+msgstr ""
+
+#: ../../../rst/acl_module.rst:151
+msgid "This is a Core Module"
+msgstr ""
+
+#: ../../../rst/acl_module.rst:153
+msgid "The source of this module is hosted on GitHub in the `ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ repo."
+msgstr ""
+
+#: ../../../rst/acl_module.rst:155
+msgid "If you believe you have found a bug in this module, and are already running the latest stable or development version of Ansible, first look in the `issue tracker at github.com/ansible/ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ to see if a bug has already been filed.  If not, we would be grateful if you would file one."
+msgstr ""
+
+#: ../../../rst/acl_module.rst:157
+msgid "Should you have a question rather than a bug report, inquries are welcome on the `ansible-project google group <https://groups.google.com/forum/#!forum/ansible-project>`_ or on Ansible's \"#ansible\" channel, located on irc.freenode.net.   Development oriented topics should instead use the similar `ansible-devel google group <https://groups.google.com/forum/#!forum/ansible-devel>`_."
+msgstr ""
+
+#: ../../../rst/acl_module.rst:159
+msgid "Documentation updates for this module can also be edited directly by submitting a pull request to the module source code, just look for the \"DOCUMENTATION\" block in the source tree."
+msgstr ""
+
+#: ../../../rst/acl_module.rst:161
+msgid "This is a \"core\" ansible module, which means it will receive slightly higher priority for all requests than those in the \"extras\" repos."
+msgstr ""
+
+#: ../../../rst/acl_module.rst:164
+msgid "For help in developing on modules, should you be so inclined, please read :doc:`community`, :doc:`developing_test_pr` and :doc:`developing_modules`."
+msgstr ""
+

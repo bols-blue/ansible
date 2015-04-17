@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/developing_test_pr.rst:2
+msgid "Helping Testing PRs"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:4
+msgid "If you're a developer, one of the most valuable things you can do is look at the github issues list and help fix bugs.  We almost always prioritize bug fixing over feature development, so clearing bugs out of the way is one of the best things you can do."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:7
+msgid "Even if you're not a developer, helping test pull requests for bug fixes and features is still immensely valuable."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:9
+msgid "This goes for testing new features as well as testing bugfixes."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:11
+msgid "In many cases, code should add tests that prove it works but that's not ALWAYS possible and tests are not always comprehensive, especially when a user doesn't have access to a wide variety of platforms, or that is using an API or web service."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:14
+msgid "In these cases, live testing against real equipment can be more valuable than automation that runs against simulated interfaces. In any case, things should always be tested manually the first time too."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:17
+msgid "Thankfully helping test ansible is pretty straightforward, assuming you are already used to how ansible works."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:20
+msgid "Get Started with A Source Checkout"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:22
+msgid "You can do this by checking out ansible, making a test branch off the main one, merging a GitHub issue, testing, and then commenting on that particular issue on GitHub. Here's how:"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:26
+msgid "Testing source code from GitHub pull requests sent to us does have some inherent risk, as the source code sent may have mistakes or malicious code that could have a negative impact on your system. We recommend doing all testing on a virtual machine, whether a cloud instance, or locally.  Some users like Vagrant or Docker for this, but they are optional.  It is also useful to have virtual machines of different Linux or other flavors, since some features (apt vs. yum, for example) are specific to those OS versions."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:32
+msgid "First, you will need to configure your testing environment with the necessary tools required to run our test suites. You will need at least::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:40
+msgid "If you want to run the full integration test suite you'll also need the following packages installed::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:47
+msgid "Second, if you haven't already, clone the Ansible source code from GitHub::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:53
+msgid "If you have previously forked the repository on GitHub, you could also clone it from there."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:56
+msgid "If updating your repo for testing something module related, use \"git rebase origin/devel\" and then \"git submodule update\" to fetch the latest development versions of modules.  Skipping the \"git submodule update\" step will result in versions that will be stale."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:60
+msgid "Activating The Source Checkout"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:62
+msgid "The Ansible source includes a script that allows you to use Ansible directly from source without requiring a full installation, that is frequently used by developers on Ansible."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:65
+msgid "Simply source it (to use the Linux/Unix terminology) to begin using it immediately::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:69
+msgid "This script modifies the PYTHONPATH enviromnent variables (along with a few other things), which will be temporarily set as long as your shell session is open."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:72
+msgid "If you'd like your testing environment to always use the latest source, you could call the command from startup scripts (for example, `.bash_profile`)."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:76
+msgid "Finding A Pull Request and Checking It Out On A Branch"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:78
+msgid "Next, find the pull request you'd like to test and make note of the line at the top which describes the source and destination repositories. It will look something like this::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:84
+msgid "It is important that the PR request target be ansible:devel, as we do not accept pull requests into any other branch. Dot releases are cherry-picked manually by ansible staff."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:87
+msgid "The username and branch at the end are the important parts, which will be turned into git commands as follows::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:92
+msgid "The first command creates and switches to a new branch named testing_PRXXXX, where the XXXX is the actual issue number associated with the pull request (for example, 1234). This branch is based on the devel branch. The second command pulls the new code from the users feature branch into the newly created branch."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:97
+msgid "If the GitHub user interface shows that the pull request will not merge cleanly, we do not recommend proceeding if you are not somewhat familiar with git and coding, as you will have to resolve a merge conflict.  This is the responsibility of the original pull request contributor."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:102
+msgid "Some users do not create feature branches, which can cause problems when they have multiple, un-related commits in their version of `devel`. If the source looks like `someuser:devel`, make sure there is only one commit listed on the pull request."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:107
+msgid "For Those About To Test, We Salute You"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:109
+msgid "At this point, you should be ready to begin testing!"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:111
+msgid "If the PR is a bug-fix pull request, the first things to do are to run the suite of unit and integration tests, to ensure the pull request does not break current functionality::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:122
+msgid "Ansible does provide integration tests for cloud-based modules as well, however we do not recommend using them for some users due to the associated costs from the cloud providers.  As such, typically it's better to run specific parts of the integration battery and skip these tests."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:126
+msgid "Integration tests aren't the end all beat all - in many cases what is fixed might not *HAVE* a test, so determining if it works means checking the functionality of the system and making sure it does what it said it would do."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:129
+msgid "Pull requests for bug-fixes should reference the bug issue number they are fixing."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:131
+msgid "We encourage users to provide playbook examples for bugs that show how to reproduce the error, and these playbooks should be used to verify the bugfix does resolve the issue if available.  You may wish to also do your own review to poke the corners of the change."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:134
+msgid "Since some reproducers can be quite involved, you might wish to create a testing directory with the issue # as a sub- directory to keep things organized::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:141
+msgid "While it should go without saying, be sure to read any playbooks before you run them.  VMs help with running untrusted content greatly, though a playbook could still do something to your computing resources that you'd rather not like."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:144
+msgid "Once the files are in place, you can run the provided playbook (if there is one) to test the functionality::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:148
+msgid "If there's not a playbook, you may have to copy and paste playbook snippets or run a ad-hoc command that was pasted in."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:150
+msgid "Our issue template also included sections for \"Expected Output\" and \"Actual Output\", which should be used to gauge the output from the provided examples."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:153
+msgid "If the pull request resolves the issue, please leave a comment on the pull request, showing the following information:"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:155
+msgid "\"Works for me!\""
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:156
+msgid "The output from `ansible --version`."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:158
+msgid "In some cases, you may wish to share playbook output from the test run as well."
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:160
+msgid "Example!::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:164
+msgid "If the PR does not resolve the issue, or if you see any failures from the unit/integration tests, just include that output instead::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:178
+msgid "When you are done testing a feature branch, you can remove it with the following command::"
+msgstr ""
+
+#: ../../../rst/developing_test_pr.rst:182
+msgid "We understand some users may be inexperienced with git, or other aspects of the above procedure, so feel free to stop by ansible-devel list for questions and we'd be happy to help answer them."
+msgstr ""
+

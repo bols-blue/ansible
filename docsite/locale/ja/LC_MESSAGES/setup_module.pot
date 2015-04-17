@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/setup_module.rst:5
+msgid "setup - Gathers facts about remote hosts"
+msgstr ""
+
+#: ../../../rst/setup_module.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../rst/setup_module.rst:17
+msgid "This module is automatically called by playbooks to gather useful variables about remote hosts that can be used in playbooks. It can also be executed directly by ``/usr/bin/ansible`` to check what variables are available to a host. Ansible provides many *facts* about the system, automatically."
+msgstr ""
+
+#: ../../../rst/setup_module.rst:20
+msgid "Options"
+msgstr ""
+
+#: ../../../rst/setup_module.rst:50
+msgid "Examples"
+msgstr ""
+
+#: ../../../rst/setup_module.rst:73
+msgid "More ansible facts will be added with successive releases. If *facter* or *ohai* are installed, variables from these programs will also be snapshotted into the JSON file for usage in templating. These variables are prefixed with ``facter_`` and ``ohai_`` so it's easy to tell their source. All variables are bubbled up to the caller. Using the ansible facts and choosing to not install *facter* and *ohai* means you can avoid Ruby-dependencies on your remote systems. (See also ``facter`` and ``ohai``.)"
+msgstr ""
+
+#: ../../../rst/setup_module.rst:74
+msgid "The filter option filters only the first level subkey below ansible_facts."
+msgstr ""
+
+#: ../../../rst/setup_module.rst:75
+msgid "If the target host is Windows, you will not currently have the ability to use ``fact_path`` or ``filter`` as this is provided by a simpler implementation of the module. Different facts are returned for Windows hosts."
+msgstr ""
+
+#: ../../../rst/setup_module.rst:80
+msgid "This is a Core Module"
+msgstr ""
+
+#: ../../../rst/setup_module.rst:82
+msgid "The source of this module is hosted on GitHub in the `ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ repo."
+msgstr ""
+
+#: ../../../rst/setup_module.rst:84
+msgid "If you believe you have found a bug in this module, and are already running the latest stable or development version of Ansible, first look in the `issue tracker at github.com/ansible/ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ to see if a bug has already been filed.  If not, we would be grateful if you would file one."
+msgstr ""
+
+#: ../../../rst/setup_module.rst:86
+msgid "Should you have a question rather than a bug report, inquries are welcome on the `ansible-project google group <https://groups.google.com/forum/#!forum/ansible-project>`_ or on Ansible's \"#ansible\" channel, located on irc.freenode.net.   Development oriented topics should instead use the similar `ansible-devel google group <https://groups.google.com/forum/#!forum/ansible-devel>`_."
+msgstr ""
+
+#: ../../../rst/setup_module.rst:88
+msgid "Documentation updates for this module can also be edited directly by submitting a pull request to the module source code, just look for the \"DOCUMENTATION\" block in the source tree."
+msgstr ""
+
+#: ../../../rst/setup_module.rst:90
+msgid "This is a \"core\" ansible module, which means it will receive slightly higher priority for all requests than those in the \"extras\" repos."
+msgstr ""
+
+#: ../../../rst/setup_module.rst:93
+msgid "For help in developing on modules, should you be so inclined, please read :doc:`community`, :doc:`developing_test_pr` and :doc:`developing_modules`."
+msgstr ""
+

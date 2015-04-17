@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/developing_api.rst:2
+#: ../../../rst/developing_api.rst:21
+msgid "Python API"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:6
+msgid "There are several interesting ways to use Ansible from an API perspective.   You can use the Ansible python API to control nodes, you can extend Ansible to respond to various python events, you can write various plugins, and you can plug in inventory data from external data sources.  This document covers the Runner and Playbook API at a basic level."
+msgstr ""
+
+#: ../../../rst/developing_api.rst:11
+msgid "If you are looking to use Ansible programmatically from something other than Python, trigger events asynchronously, or have access control and logging demands, take a look at :doc:`tower` as it has a very nice REST API that provides all of these things at a higher level."
+msgstr ""
+
+#: ../../../rst/developing_api.rst:15
+msgid "Ansible is written in its own API so you have a considerable amount of power across the board. This chapter discusses the Python API."
+msgstr ""
+
+#: ../../../rst/developing_api.rst:23
+msgid "The Python API is very powerful, and is how the ansible CLI and ansible-playbook are implemented."
+msgstr ""
+
+#: ../../../rst/developing_api.rst:26
+msgid "It's pretty simple::"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:38
+msgid "The run method returns results per host, grouped by whether they could be contacted or not.  Return types are module specific, as expressed in the :doc:`modules` documentation.::"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:51
+msgid "A module can return any type of JSON data it wants, so Ansible can be used as a framework to rapidly build powerful applications and scripts."
+msgstr ""
+
+#: ../../../rst/developing_api.rst:57
+msgid "Detailed API Example"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:59
+msgid "The following script prints out the uptime information for all hosts::"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:90
+msgid "Advanced programmers may also wish to read the source to ansible itself, for it uses the Runner() API (with all available options) to implement the command line tools ``ansible`` and ``ansible-playbook``."
+msgstr ""
+
+#: ../../../rst/developing_api.rst:96
+msgid ":doc:`developing_inventory`"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:97
+msgid "Developing dynamic inventory integrations"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:98
+msgid ":doc:`developing_modules`"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:99
+msgid "How to develop modules"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:100
+msgid ":doc:`developing_plugins`"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:101
+msgid "How to develop plugins"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:102
+msgid "`Development Mailing List <http://groups.google.com/group/ansible-devel>`_"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:103
+msgid "Mailing list for development topics"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:104
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/developing_api.rst:105
+msgid "#ansible IRC chat channel"
+msgstr ""
+

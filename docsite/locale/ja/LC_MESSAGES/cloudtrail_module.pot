@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/cloudtrail_module.rst:5
+msgid "cloudtrail - manage CloudTrail creation and deletion"
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:18
+msgid "Creates or deletes CloudTrail configuration. Ensures logging is also enabled. This module has a dependency on python-boto >= 2.21."
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:21
+msgid "Options"
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:120
+msgid "Requires boto"
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:124
+msgid "Examples"
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:148
+msgid "If parameters are not set within the module, the following environment variables can be used in decreasing order of precedence ``AWS_URL`` or ``EC2_URL``, ``AWS_ACCESS_KEY_ID`` or ``AWS_ACCESS_KEY`` or ``EC2_ACCESS_KEY``, ``AWS_SECRET_ACCESS_KEY`` or ``AWS_SECRET_KEY`` or ``EC2_SECRET_KEY``, ``AWS_SECURITY_TOKEN`` or ``EC2_SECURITY_TOKEN``, ``AWS_REGION`` or ``EC2_REGION``"
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:149
+msgid "Ansible uses the boto configuration file (typically ~/.boto) if no credentials are provided. See http://boto.readthedocs.org/en/latest/boto_config_tut.html"
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:150
+msgid "``AWS_REGION`` or ``EC2_REGION`` can be typically be used to specify the AWS region, when required, but this can also be configured in the boto config file"
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:155
+msgid "This is an Extras Module"
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:157
+msgid "This source of this module is hosted on GitHub in the `ansible-modules-extras <http://github.com/ansible/ansible-modules-extras>`_ repo."
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:159
+msgid "If you believe you have found a bug in this module, and are already running the latest stable or development version of Ansible, first look in the `issue tracker at github.com/ansible/ansible-modules-extras <http://github.com/ansible/ansible-modules-extras>`_ to see if a bug has already been filed.  If not, we would be grateful if you would file one."
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:161
+msgid "Should you have a question rather than a bug report, inquries are welcome on the `ansible-project google group <https://groups.google.com/forum/#!forum/ansible-project>`_ or on Ansible's \"#ansible\" channel, located on irc.freenode.net.   Development oriented topics should instead use the similar `ansible-devel google group <https://groups.google.com/forum/#!forum/ansible-devel>`_."
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:163
+msgid "Documentation updates for this module can also be edited directly by submitting a pull request to the module source code, just look for the \"DOCUMENTATION\" block in the source tree."
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:165
+msgid "Note that this module is designated a \"extras\" module.  Non-core modules are still fully usable, but may receive slightly lower response rates for issues and pull requests. Popular \"extras\" modules may be promoted to core modules over time."
+msgstr ""
+
+#: ../../../rst/cloudtrail_module.rst:169
+msgid "For help in developing on modules, should you be so inclined, please read :doc:`community`, :doc:`developing_test_pr` and :doc:`developing_modules`."
+msgstr ""
+

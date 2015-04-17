@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/postgresql_privs_module.rst:5
+msgid "postgresql_privs - Grant or revoke privileges on PostgreSQL database objects."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:18
+msgid "Grant or revoke privileges on PostgreSQL database objects. This module is basically a wrapper around most of the functionality of PostgreSQL's GRANT and REVOKE statements with detection of changes (GRANT/REVOKE *privs* ON *type* *objs* TO/FROM *roles*)"
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:22
+msgid "Options"
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:128
+msgid "Requires psycopg2"
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:132
+msgid "Examples"
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:231
+msgid "Default authentication assumes that postgresql_privs is run by the ``postgres`` user on the remote host. (Ansible's ``user`` or ``sudo-user``)."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:232
+msgid "This module requires Python package *psycopg2* to be installed on the remote host. In the default case of the remote host also being the PostgreSQL server, PostgreSQL has to be installed there as well, obviously. For Debian/Ubuntu-based systems, install packages *postgresql* and *python-psycopg2*."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:233
+msgid "Parameters that accept comma separated lists (*privs*, *objs*, *roles*) have singular alias names (*priv*, *obj*, *role*)."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:234
+msgid "To revoke only ``GRANT OPTION`` for a specific object, set *state* to ``present`` and *grant_option* to ``no`` (see examples)."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:235
+msgid "Note that when revoking privileges from a role R, this role  may still have access via privileges granted to any role R is a member of including ``PUBLIC``."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:236
+msgid "Note that when revoking privileges from a role R, you do so as the user specified via *login*. If R has been granted the same privileges by another user also, R can still access database objects via these privileges."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:237
+msgid "When revoking privileges, ``RESTRICT`` is assumed (see PostgreSQL docs)."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:242
+msgid "This is a Core Module"
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:244
+msgid "The source of this module is hosted on GitHub in the `ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ repo."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:246
+msgid "If you believe you have found a bug in this module, and are already running the latest stable or development version of Ansible, first look in the `issue tracker at github.com/ansible/ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ to see if a bug has already been filed.  If not, we would be grateful if you would file one."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:248
+msgid "Should you have a question rather than a bug report, inquries are welcome on the `ansible-project google group <https://groups.google.com/forum/#!forum/ansible-project>`_ or on Ansible's \"#ansible\" channel, located on irc.freenode.net.   Development oriented topics should instead use the similar `ansible-devel google group <https://groups.google.com/forum/#!forum/ansible-devel>`_."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:250
+msgid "Documentation updates for this module can also be edited directly by submitting a pull request to the module source code, just look for the \"DOCUMENTATION\" block in the source tree."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:252
+msgid "This is a \"core\" ansible module, which means it will receive slightly higher priority for all requests than those in the \"extras\" repos."
+msgstr ""
+
+#: ../../../rst/postgresql_privs_module.rst:255
+msgid "For help in developing on modules, should you be so inclined, please read :doc:`community`, :doc:`developing_test_pr` and :doc:`developing_modules`."
+msgstr ""
+

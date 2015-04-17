@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/playbooks_startnstep.rst:2
+msgid "Start and Step"
+msgstr ""
+
+#: ../../../rst/playbooks_startnstep.rst:4
+msgid "This shows a few alternative ways to run playbooks. These modes are very useful for testing new plays or debugging."
+msgstr ""
+
+#: ../../../rst/playbooks_startnstep.rst:10
+msgid "Start-at-task"
+msgstr ""
+
+#: ../../../rst/playbooks_startnstep.rst:11
+msgid "If you want to start executing your playbook at a particular task, you can do so with the ``--start-at-task`` option::"
+msgstr ""
+
+#: ../../../rst/playbooks_startnstep.rst:15
+msgid "The above will start executing your playbook at a task named \"install packages\"."
+msgstr ""
+
+#: ../../../rst/playbooks_startnstep.rst:21
+msgid "Step"
+msgstr ""
+
+#: ../../../rst/playbooks_startnstep.rst:23
+msgid "Playbooks can also be executed interactively with ``--step``::"
+msgstr ""
+
+#: ../../../rst/playbooks_startnstep.rst:27
+msgid "This will cause ansible to stop on each task, and ask if it should execute that task. Say you had a task called \"configure ssh\", the playbook run will stop and ask::"
+msgstr ""
+
+#: ../../../rst/playbooks_startnstep.rst:32
+msgid "Answering \"y\" will execute the task, answering \"n\" will skip the task, and answering \"c\" will continue executing all the remaining tasks without asking."
+msgstr ""
+

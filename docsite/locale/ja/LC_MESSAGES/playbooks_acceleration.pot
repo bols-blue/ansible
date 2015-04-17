@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/playbooks_acceleration.rst:2
+msgid "Accelerated Mode"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:7
+msgid "You Might Not Need This!"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:9
+msgid "Are you running Ansible 1.5 or later?  If so, you may not need accelerated mode due to a new feature called \"SSH pipelining\" and should read the :ref:`pipelining` section of the documentation."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:12
+msgid "For users on 1.5 and later, accelerated mode only makes sense if you (A) are managing from an Enterprise Linux 6 or earlier host"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:12
+msgid "and still are on paramiko, or (B) can't enable TTYs with sudo as described in the pipelining docs."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:14
+msgid "If you can use pipelining, Ansible will reduce the amount of files transferred over the wire, making everything much more efficient, and performance will be on par with accelerated mode in nearly all cases, possibly excluding very large file transfer.   Because less moving parts are involved, pipelining is better than accelerated mode for nearly all use cases."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:17
+msgid "Accelerated moded remains around in support of EL6 control machines and other constrained environments."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:21
+msgid "Accelerated Mode Details"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:23
+msgid "While OpenSSH using the ControlPersist feature is quite fast and scalable, there is a certain small amount of overhead involved in using SSH connections.  While many people will not encounter a need, if you are running on a platform that doesn't have ControlPersist support (such as an EL6 control machine), you'll probably be even more interested in tuning options."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:26
+msgid "Accelerated mode is there to help connections work faster, but still uses SSH for initial secure key exchange.  There is no additional public key infrastructure to manage, and this does not require things like NTP or even DNS."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:29
+msgid "Accelerated mode can be anywhere from 2-6x faster than SSH with ControlPersist enabled, and 10x faster than paramiko."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:31
+msgid "Accelerated mode works by launching a temporary daemon over SSH. Once the daemon is running, Ansible will connect directly to it via a socket connection. Ansible secures this communication by using a temporary AES key that is exchanged during the SSH connection (this key is different for every host, and is also regenerated periodically)."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:35
+msgid "By default, Ansible will use port 5099 for the accelerated connection, though this is configurable. Once running, the daemon will accept connections for 30 minutes, after which time it will terminate itself and need to be restarted over SSH."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:37
+msgid "Accelerated mode offers several improvements over the (deprecated) original fireball mode from which it was based:"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:39
+msgid "No bootstrapping is required, only a single line needs to be added to each play you wish to run in accelerated mode."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:40
+msgid "Support for sudo commands (see below for more details and caveats) is available."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:41
+msgid "There are fewer requirements. ZeroMQ is no longer required, nor are there any special packages beyond python-keyczar"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:42
+msgid "python 2.5 or higher is required."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:44
+msgid "In order to use accelerated mode, simply add `accelerate: true` to your play::"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:60
+msgid "If you wish to change the port Ansible will use for the accelerated connection, just add the `accelerated_port` option::"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:69
+msgid "The `accelerate_port` option can also be specified in the environment variable ACCELERATE_PORT, or in your `ansible.cfg` configuration::"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:74
+msgid "As noted above, accelerated mode also supports running tasks via sudo, however there are two important caveats:"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:76
+msgid "You must remove requiretty from your sudoers options."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:77
+msgid "Prompting for the sudo password is not yet supported, so the NOPASSWD option is required for sudo'ed commands."
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:79
+msgid "As of Ansible version `1.6`, you can also allow the use of multiple keys for connections from multiple Ansible management nodes. To do so, add the following option to your `ansible.cfg` configuration::"
+msgstr ""
+
+#: ../../../rst/playbooks_acceleration.rst:84
+msgid "When enabled, the daemon will open a UNIX socket file (by default `$ANSIBLE_REMOTE_TEMP/.ansible-accelerate/.local.socket`). New connections over SSH can use this socket file to upload new keys to the daemon."
+msgstr ""
+

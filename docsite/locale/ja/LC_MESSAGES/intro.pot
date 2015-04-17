@@ -1,0 +1,26 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/intro.rst:2
+msgid "Introduction"
+msgstr ""
+
+#: ../../../rst/intro.rst:4
+msgid "Before we dive into the really fun parts -- playbooks, configuration management, deployment, and orchestration, we'll learn how to get Ansible installed and cover some basic concepts.  We'll also go over how to execute ad-hoc commands in parallel across your nodes using /usr/bin/ansible.  Additionally, we'll see what sort of modules are available in Ansible's core (though you can also write your own, which is also covered later)."
+msgstr ""
+

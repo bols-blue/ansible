@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/index.rst:2
+msgid "Ansible Documentation"
+msgstr ""
+
+#: ../../../rst/index.rst:5
+msgid "About Ansible"
+msgstr ""
+
+#: ../../../rst/index.rst:7
+msgid "Welcome to the Ansible documentation!"
+msgstr ""
+
+#: ../../../rst/index.rst:9
+msgid "Ansible is an IT automation tool.  It can configure systems, deploy software, and orchestrate more advanced IT tasks such as continuous deployments or zero downtime rolling updates."
+msgstr ""
+
+#: ../../../rst/index.rst:12
+msgid "Ansible's goals are foremost those of simplicity and maximum ease of use. It also has a strong focus on security and reliability, featuring a minimum of moving parts, usage of OpenSSH for transport (with an accelerated socket mode and pull modes as alternatives), and a language that is designed around auditability by humans -- even those not familiar with the program."
+msgstr ""
+
+#: ../../../rst/index.rst:14
+msgid "We believe simplicity is relevant to all sizes of environments and design for busy users of all types -- whether this means developers, sysadmins, release engineers, IT managers, and everywhere in between. Ansible is appropriate for managing small setups with a handful of instances as well as enterprise environments with many thousands."
+msgstr ""
+
+#: ../../../rst/index.rst:16
+msgid "Ansible manages machines in an agentless manner. There is never a question of how to upgrade remote daemons or the problem of not being able to manage systems because daemons are uninstalled.  As OpenSSH is one of the most peer reviewed open source components, the security exposure of using the tool is greatly reduced.  Ansible is decentralized -- it relies on your existing OS credentials to control access to remote machines; if needed it can easily connect with Kerberos, LDAP, and other centralized authentication management systems."
+msgstr ""
+
+#: ../../../rst/index.rst:19
+msgid "This documentation covers the current released version of Ansible (1.8.4) and also some development version features (1.9).  For recent features, in each section, the version of Ansible where the feature is added is indicated.  Ansible, Inc releases a new major release of Ansible approximately every 2 months.  The core application evolves somewhat conservatively, valuing simplicity in language design and setup, while the community around new modules and plugins being developed and contributed moves very very quickly, typically adding 20 or so new modules in each release."
+msgstr ""
+

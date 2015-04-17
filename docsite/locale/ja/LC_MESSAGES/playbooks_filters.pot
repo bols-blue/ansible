@@ -1,0 +1,402 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/playbooks_filters.rst:2
+msgid "Jinja2 filters"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:6
+msgid "Filters in Jinja2 are a way of transforming template expressions from one kind of data into another.  Jinja2 ships with many of these. See `builtin filters`_ in the official Jinja2 template documentation."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:9
+msgid "In addition to those, Ansible supplies many more."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:14
+msgid "Filters For Formatting Data"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:16
+msgid "The following filters will take a data structure in a template and render it in a slightly different format.  These are occasionally useful for debugging::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:25
+msgid "Filters Often Used With Conditionals"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:27
+msgid "The following tasks are illustrative of how filters can be used with conditionals::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:51
+msgid "Forcing Variables To Be Defined"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:53
+msgid "The default behavior from ansible and ansible.cfg is to fail if variables are undefined, but you can turn this off."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:55
+msgid "This allows an explicit check with this feature off::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:59
+msgid "The variable value will be used as is, but the template evaluation will raise an error if it is undefined."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:65
+msgid "Defaulting Undefined Variables"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:67
+msgid "Jinja2 provides a useful 'default' filter, that is often a better approach to failing if a variable is not defined::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:71
+msgid "In the above example, if the variable 'some_variable' is not defined, the value used will be 5, rather than an error being raised."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:78
+msgid "Omitting Undefined Variables and Parameters"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:80
+msgid "As of Ansible 1.8, it is possible to use the default filter to omit variables and module parameters using the special `omit` variable::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:91
+msgid "For the first two files in the list, the default mode will be determined by the umask of the system as the `mode=` parameter will not be sent to the file module while the final file will receive the `mode=0444` option."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:98
+msgid "List Filters"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:100
+msgid "These filters all operate on list variables."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:104
+msgid "To get the minimum value from list of numbers::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:108
+msgid "To get the maximum value from a list of numbers::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:115
+msgid "Set Theory Filters"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:116
+msgid "All these functions return a unique set from sets or lists."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:120
+msgid "To get a unique set from a list::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:124
+msgid "To get a union of two lists::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:128
+msgid "To get the intersection of 2 lists (unique list of all items in both)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:132
+msgid "To get the difference of 2 lists (items in 1 that don't exist in 2)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:136
+msgid "To get the symmetric difference of 2 lists (items exclusive to each list)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:143
+msgid "Version Comparison Filters"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:147
+msgid "To compare a version number, such as checking if the ``ansible_distribution_version`` version is greater than or equal to '12.04', you can use the ``version_compare`` filter."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:150
+msgid "The ``version_compare`` filter can also be used to evaluate the ``ansible_distribution_version``::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:154
+msgid "If ``ansible_distribution_version`` is greater than or equal to 12, this filter will return True, otherwise it will return False."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:156
+msgid "The ``version_compare`` filter accepts the following operators::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:160
+msgid "This filter also accepts a 3rd parameter, ``strict`` which defines if strict version parsing should be used.  The default is ``False``, and if set as ``True`` will use more strict version parsing::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:168
+msgid "Random Number Filter"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:172
+msgid "This filter can be used similar to the default jinja2 random filter (returning a random item from a sequence of items), but can also generate a random number based on a range."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:175
+msgid "To get a random item from a list::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:179
+msgid "To get a random number from 0 to supplied end::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:183
+msgid "Get a random number from 0 to 100 but in steps of 10::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:187
+msgid "Get a random number from 1 to 100 but in steps of 10::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:194
+msgid "Shuffle Filter"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:198
+msgid "This filter will randomize an existing list, giving a different order every invocation."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:200
+msgid "To get a random list from an existing  list::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:205
+msgid "note that when used with a non 'listable' item it is a noop, otherwise it always returns a list"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:211
+msgid "Math"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:215
+msgid "To see if something is actually a number::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:219
+msgid "Get the logarithm (default is e)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:223
+msgid "Get the base 10 logarithm::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:227
+msgid "Give me the power of 2! (or 5)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:232
+msgid "Square root, or the 5th::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:237
+msgid "Note that jinja2 already provides some like abs() and round()."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:242
+msgid "IP address filter"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:245
+msgid "To test if a string is a valid IP address::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:249
+msgid "You can also require a specific IP protocol version::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:254
+msgid "IP address filter can also be used to extract specific information from an IP address. For example, to get the IP address itself from a CIDR, you can use::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:259
+msgid "More information about ``ipaddr`` filter and complete usage guide can be found in :doc:`playbooks_filters_ipaddr`."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:265
+msgid "Hashing filters"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:268
+msgid "To get the sha1 hash of a string::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:272
+msgid "To get the md5 hash of a string::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:276
+msgid "Get a string checksum::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:280
+msgid "Other hashes (platform dependant)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:284
+msgid "To get a sha512 password hash (random salt)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:288
+msgid "To get a sha256 password hash with a specific salt::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:293
+msgid "Hash types available depend on the master system running ansible, 'hash' depends on hashlib password_hash depends on crypt."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:300
+msgid "Other Useful Filters"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:302
+msgid "To use one value on true and another on false (since 1.9)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:306
+msgid "To concatenate a list into a string::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:310
+msgid "To get the last name of a file path, like 'foo.txt' out of '/etc/asdf/foo.txt'::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:314
+msgid "To get the directory from a path::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:318
+msgid "To expand a path containing a tilde (`~`) character (new in version 1.5)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:322
+msgid "To get the real path of a link (new in version 1.8)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:326
+msgid "To work with Base64 encoded strings::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:331
+msgid "To create a UUID from a string (new in version 1.9)::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:335
+msgid "To cast values as certain types, such as when you input a string as \"True\" from a vars_prompt and the system doesn't know it is a boolean value::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:341
+msgid "To match strings against a regex, use the \"match\" or \"search\" filter::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:353
+msgid "'match' will require a complete match in the string, while 'search' will require a match inside of the string."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:355
+msgid "To replace text in a string with regex, use the \"regex_replace\" filter::"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:363
+msgid "If \"regex_replace\" filter is used with variables inside YAML arguments (as opposed to simpler 'key=value' arguments), then you need to escape backreferences (e.g. ``\\\\1``) with 4 backslashes (``\\\\\\\\``) instead of 2 (``\\\\``)."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:366
+msgid "A few useful filters are typically added with each new Ansible release.  The development documentation shows how to extend Ansible filters by writing your own as plugins, though in general, we encourage new ones to be added to core so everyone can make use of them."
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:374
+msgid ":doc:`playbooks`"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:375
+msgid "An introduction to playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:376
+msgid ":doc:`playbooks_conditionals`"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:377
+msgid "Conditional statements in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:378
+msgid ":doc:`playbooks_variables`"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:379
+msgid "All about variables"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:380
+msgid ":doc:`playbooks_loops`"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:381
+msgid "Looping in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:382
+msgid ":doc:`playbooks_roles`"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:383
+msgid "Playbook organization by roles"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:384
+msgid ":doc:`playbooks_best_practices`"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:385
+msgid "Best practices in playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:386
+msgid "`User Mailing List <http://groups.google.com/group/ansible-devel>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:387
+msgid "Have a question?  Stop by the google group!"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:388
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_filters.rst:389
+msgid "#ansible IRC chat channel"
+msgstr ""
+

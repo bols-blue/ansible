@@ -1,0 +1,378 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/playbooks_intro.rst:2
+msgid "Intro to Playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:7
+msgid "About Playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:9
+msgid "Playbooks are a completely different way to use ansible than in adhoc task execution mode, and are particularly powerful."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:12
+msgid "Simply put, playbooks are the basis for a really simple configuration management and multi-machine deployment system, unlike any that already exist, and one that is very well suited to deploying complex applications."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:15
+msgid "Playbooks can declare configurations, but they can also orchestrate steps of any manual ordered process, even as different steps must bounce back and forth between sets of machines in particular orders.  They can launch tasks synchronously or asynchronously."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:20
+msgid "While you might run the main /usr/bin/ansible program for ad-hoc tasks, playbooks are more likely to be kept in source control and used to push out your configuration or assure the configurations of your remote systems are in spec."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:25
+msgid "There are also some full sets of playbooks illustrating a lot of these techniques in the `ansible-examples repository <https://github.com/ansible/ansible-examples>`_.  We'd recommend looking at these in another tab as you go along."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:29
+msgid "There are also many jumping off points after you learn playbooks, so hop back to the documentation index after you're done with this section."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:35
+msgid "Playbook Language Example"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:37
+msgid "Playbooks are expressed in YAML format (see :doc:`YAMLSyntax`) and have a minimum of syntax, which intentionally tries to not be a programming language or script, but rather a model of a configuration or a process."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:40
+msgid "Each playbook is composed of one or more 'plays' in a list."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:42
+msgid "The goal of a play is to map a group of hosts to some well defined roles, represented by things ansible calls tasks.  At a basic level, a task is nothing more than a call to an ansible module, which you should have learned about in earlier chapters."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:46
+msgid "By composing a playbook of multiple 'plays', it is possible to orchestrate multi-machine deployments, running certain steps on all machines in the webservers group, then certain steps on the database server group, then more commands back on the webservers group, etc."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:51
+msgid "\"plays\" are more or less a sports analogy.  You can have quite a lot of plays that affect your systems to do different things.  It's not as if you were just defining one particular state or model, and you can run different plays at different times."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:55
+msgid "For starters, here's a playbook that contains just one play::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:76
+msgid "We can also break task items out over multiple lines using the YAML dictionary types to supply module arguments. This can be helpful when working with tasks that have really long parameters or modules that take many parameters to keep them well structured. Below is another version of the above example but using YAML dictionaries to supply the modules with their key=value arguments.::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:109
+msgid "Below, we'll break down what the various features of the playbook language are."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:114
+msgid "Basics"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:119
+msgid "Hosts and Users"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:121
+msgid "For each play in a playbook, you get to choose which machines in your infrastructure to target and what remote user to complete the steps (called tasks) as."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:124
+msgid "The `hosts` line is a list of one or more groups or host patterns, separated by colons, as described in the :doc:`intro_patterns` documentation.  The `remote_user` is just the name of the user account::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:134
+msgid "The `remote_user` parameter was formerly called just `user`. It was renamed in Ansible 1.4 to make it more distinguishable from the `user` module (used to create users on remote systems)."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:136
+msgid "Remote users can also be defined per task::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:148
+msgid "The `remote_user` parameter for tasks was added in 1.4."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:151
+msgid "Support for running things from sudo is also available::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:158
+msgid "You can also use sudo on a particular task instead of the whole play::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:168
+msgid "You can also login as you, and then sudo to different users than root::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:176
+msgid "If you need to specify a password to sudo, run `ansible-playbook` with ``--ask-sudo-pass`` (`-K`). If you run a sudo playbook and the playbook seems to hang, it's probably stuck at the sudo prompt. Just `Control-C` to kill it and run it again with `-K`."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:182
+msgid "When using `sudo_user` to a user other than root, the module arguments are briefly written into a random tempfile in /tmp. These are deleted immediately after the command is executed.  This only occurs when sudoing from a user like 'bob' to 'timmy', not when going from 'bob' to 'root', or logging in directly as 'bob' or 'root'.  If it concerns you that this data is briefly readable (not writable), avoid transferring unencrypted passwords with `sudo_user` set.  In other cases, '/tmp' is not used and this does not come into play. Ansible also takes care to not log password parameters."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:196
+msgid "Tasks list"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:198
+msgid "Each play contains a list of tasks.  Tasks are executed in order, one at a time, against all machines matched by the host pattern, before moving on to the next task.  It is important to understand that, within a play, all hosts are going to get the same task directives.  It is the purpose of a play to map a selection of hosts to tasks."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:204
+msgid "When running the playbook, which runs top to bottom, hosts with failed tasks are taken out of the rotation for the entire playbook.  If things fail, simply correct the playbook file and rerun."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:207
+msgid "The goal of each task is to execute a module, with very specific arguments. Variables, as mentioned above, can be used in arguments to modules."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:210
+msgid "Modules are 'idempotent', meaning if you run them again, they will make only the changes they must in order to bring the system to the desired state.  This makes it very safe to rerun the same playbook multiple times.  They won't change things unless they have to change things."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:216
+msgid "The `command` and `shell` modules will typically rerun the same command again, which is totally ok if the command is something like 'chmod' or 'setsebool', etc.  Though there is a 'creates' flag available which can be used to make these modules also idempotent."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:221
+msgid "Every task should have a `name`, which is included in the output from running the playbook.   This is output for humans, so it is nice to have reasonably good descriptions of each task step.  If the name is not provided though, the string fed to 'action' will be used for output."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:227
+msgid "Tasks can be declared using the legacy \"action: module options\" format, but it is recommended that you use the more conventional \"module: options\" format. This recommended format is used throughout the documentation, but you may encounter the older format in some playbooks."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:232
+msgid "Here is what a basic task looks like. As with most modules, the service module takes key=value arguments::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:239
+msgid "The `command` and `shell` modules are the only modules that just take a list of arguments and don't use the key=value form.  This makes them work as simply as you would expect::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:247
+msgid "The command and shell module care about return codes, so if you have a command whose successful exit code is not zero, you may wish to do this::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:254
+msgid "Or this::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:262
+msgid "If the action line is getting too long for comfort you can break it on a space and indent any continuation lines::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:270
+msgid "Variables can be used in action lines.   Suppose you defined a variable called 'vhost' in the 'vars' section, you could do this::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:277
+msgid "Those same variables are usable in templates, which we'll get to later."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:279
+msgid "Now in a very basic playbook all the tasks will be listed directly in that play, though it will usually make more sense to break up tasks using the 'include:' directive.  We'll show that a bit later."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:285
+msgid "Action Shorthand"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:289
+msgid "Ansible prefers listing modules like this in 0.8 and later::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:293
+msgid "You will notice in earlier versions, this was only available as::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:297
+msgid "The old form continues to work in newer versions without any plan of deprecation."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:302
+msgid "Handlers: Running Operations On Change"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:304
+msgid "As we've mentioned, modules are written to be 'idempotent' and can relay  when they have made a change on the remote system.   Playbooks recognize this and have a basic event system that can be used to respond to change."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:308
+msgid "These 'notify' actions are triggered at the end of each block of tasks in a playbook, and will only be triggered once even if notified by multiple different tasks."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:311
+msgid "For instance, multiple resources may indicate that apache needs to be restarted because they have changed a config file, but apache will only be bounced once to avoid unnecessary restarts."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:315
+msgid "Here's an example of restarting two services when the contents of a file change, but only if the file changes::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:324
+msgid "The things listed in the 'notify' section of a task are called handlers."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:327
+msgid "Handlers are lists of tasks, not really any different from regular tasks, that are referenced by name.  Handlers are what notifiers notify.  If nothing notifies a handler, it will not run.  Regardless of how many things notify a handler, it will run only once, after all of the tasks complete in a particular play."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:333
+msgid "Here's an example handlers section::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:341
+msgid "Handlers are best used to restart services and trigger reboots.  You probably won't need them for much else."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:345
+msgid "Notify handlers are always run in the order written."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:347
+msgid "Roles are described later on.  It's worthwhile to point out that handlers are automatically processed between 'pre_tasks', 'roles', 'tasks', and 'post_tasks' sections.  If you ever want to flush all the handler commands immediately though, in 1.2 and later, you can::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:357
+msgid "In the above example any queued up handlers would be processed early when the 'meta' statement was reached.  This is a bit of a niche case but can come in handy from time to time."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:364
+msgid "Executing A Playbook"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:366
+msgid "Now that you've learned playbook syntax, how do you run a playbook?  It's simple. Let's run a playbook using a parallelism level of 10::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:374
+msgid "Ansible-Pull"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:376
+msgid "Should you want to invert the architecture of Ansible, so that nodes check in to a central location, instead of pushing configuration out to them, you can."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:379
+msgid "Ansible-pull is a small script that will checkout a repo of configuration instructions from git, and then run ansible-playbook against that content."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:382
+msgid "Assuming you load balance your checkout location, ansible-pull scales essentially infinitely."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:384
+msgid "Run ``ansible-pull --help`` for details."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:386
+msgid "There's also a `clever playbook <https://github.com/ansible/ansible-examples/blob/master/language_features/ansible_pull.yml>`_ available to configure ansible-pull via a crontab from push mode."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:391
+msgid "Tips and Tricks"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:393
+msgid "Look at the bottom of the playbook execution for a summary of the nodes that were targeted and how they performed.   General failures and fatal \"unreachable\" communication attempts are kept separate in the counts."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:397
+msgid "If you ever want to see detailed output from successful modules as well as unsuccessful ones, use the ``--verbose`` flag.  This is available in Ansible 0.5 and later."
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:400
+msgid "Ansible playbook output is vastly upgraded if the cowsay package is installed.  Try it!"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:403
+msgid "To see what hosts would be affected by a playbook before you run it, you can do this::"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:410
+msgid ":doc:`YAMLSyntax`"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:411
+msgid "Learn about YAML syntax"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:412
+msgid ":doc:`playbooks_best_practices`"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:413
+msgid "Various tips about managing playbooks in the real world"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:414
+msgid ":doc:`index`"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:415
+msgid "Hop back to the documentation index for a lot of special topics about playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:416
+msgid ":doc:`modules`"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:417
+msgid "Learn about available modules"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:418
+msgid ":doc:`developing_modules`"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:419
+msgid "Learn how to extend Ansible by writing your own modules"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:420
+msgid ":doc:`intro_patterns`"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:421
+msgid "Learn about how to select hosts"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:422
+msgid "`Github examples directory <https://github.com/ansible/ansible-examples>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:423
+msgid "Complete end-to-end playbook examples"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:424
+msgid "`Mailing List <http://groups.google.com/group/ansible-project>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_intro.rst:425
+msgid "Questions? Help? Ideas?  Stop by the list on Google Groups"
+msgstr ""
+

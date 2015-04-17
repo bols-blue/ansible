@@ -1,0 +1,438 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/developing_modules.rst:2
+msgid "Developing Modules"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:0
+msgid "Topics"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:6
+msgid "Ansible modules are reusable units of magic that can be used by the Ansible API, or by the `ansible` or `ansible-playbook` programs."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:9
+msgid "See :doc:`modules` for a list of various ones developed in core."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:11
+msgid "Modules can be written in any language and are found in the path specified by `ANSIBLE_LIBRARY` or the ``--module-path`` command line option."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:14
+msgid "By default, everything that ships with ansible is pulled from its source tree, but additional paths can be added."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:17
+msgid "The directory \"./library\", alongside your top level playbooks, is also automatically added as a search directory."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:20
+msgid "Should you develop an interesting Ansible module, consider sending a pull request to the `modules-extras project <http://github.com/ansible/ansible-modules-extras>`_.  There's also a core repo for more established and widely used modules.  \"Extras\" modules may be promoted to core periodically, but there's no fundamental difference in the end - both ship with ansible, all in one package, regardless of how you acquire ansible."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:29
+msgid "Tutorial"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:31
+msgid "Let's build a very-basic module to get and set the system time.  For starters, let's build a module that just outputs the current time."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:34
+msgid "We are going to use Python here but any language is possible.  Only File I/O and outputting to standard out are required.  So, bash, C++, clojure, Python, Ruby, whatever you want is fine."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:38
+msgid "Now Python Ansible modules contain some extremely powerful shortcuts (that all the core modules use) but first we are going to build a module the very hard way.  The reason we do this is because modules written in any language OTHER than Python are going to have to do exactly this.  We'll show the easy way later."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:43
+msgid "So, here's an example.  You would never really need to build a module to set the system time, the 'command' module could already be used to do this.  Though we're going to make one."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:46
+msgid "Reading the modules that come with ansible (linked above) is a great way to learn how to write modules.   Keep in mind, though, that some modules in ansible's source tree are internalisms, so look at `service` or `yum`, and don't stare too close into things like `async_wrapper` or you'll turn to stone.  Nobody ever executes async_wrapper directly."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:51
+msgid "Ok, let's get going with an example.  We'll use Python.  For starters, save this as a file named `timetest.py`::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:66
+msgid "Testing Modules"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:68
+msgid "There's a useful test script in the source checkout for ansible::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:74
+msgid "Let's run the script you just wrote with that::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:78
+msgid "You should see output that looks something like this::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:82
+msgid "If you did not, you might have a typo in your module, so recheck it and try again."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:87
+msgid "Reading Input"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:90
+msgid "Let's modify the module to allow setting the current time.  We'll do this by seeing if a key value pair in the form `time=<string>` is passed in to the module."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:93
+msgid "Ansible internally saves arguments to an arguments file.  So we must read the file and parse it.  The arguments file is just a string, so any form of arguments are legal. Here we'll do some basic parsing to treat the input as key=value."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:97
+msgid "The example usage we are trying to achieve to set the time is::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:101
+msgid "If no time parameter is set, we'll just leave the time as is and return the current time."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:104
+msgid "This is obviously an unrealistic idea for a module.  You'd most likely just use the shell module.  However, it probably makes a decent tutorial."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:107
+msgid "Let's look at the code.  Read the comments as we'll explain as we go.  Note that this is highly verbose because it's intended as an educational example.  You can write modules a lot shorter than this::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:192
+msgid "Let's test that module::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:196
+msgid "This should return something like::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:203
+msgid "Module Provided 'Facts'"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:205
+msgid "The 'setup' module that ships with Ansible provides many variables about a system that can be used in playbooks and templates.  However, it's possible to also add your own facts without modifying the system module.  To do this, just have the module return a `ansible_facts` key, like so, along with other return data::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:221
+msgid "These 'facts' will be available to all statements called after that module (but not before) in the playbook. A good idea might be make a module called 'site_facts' and always call it at the top of each playbook, though we're always open to improving the selection of core facts in Ansible as well."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:228
+msgid "Common Module Boilerplate"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:230
+msgid "As mentioned, if you are writing a module in Python, there are some very powerful shortcuts you can use. Modules are still transferred as one file, but an arguments file is no longer needed, so these are not only shorter in terms of code, they are actually FASTER in terms of execution time."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:234
+msgid "Rather than mention these here, the best way to learn is to read some of the `source of the modules <https://github.com/ansible/ansible-modules-core>`_ that come with Ansible."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:236
+msgid "The 'group' and 'user' modules are reasonably non-trivial and showcase what this looks like."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:238
+msgid "Key parts include always ending the module file with::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:243
+msgid "And instantiating the module class like::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:254
+msgid "The AnsibleModule provides lots of common code for handling returns, parses your arguments for you, and allows you to check inputs."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:257
+msgid "Successful returns are made like this::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:261
+msgid "And failures are just as simple (where 'msg' is a required parameter to explain the error)::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:265
+msgid "There are also other useful functions in the module class, such as module.sha1(path).  See lib/ansible/module_common.py in the source checkout for implementation details."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:268
+msgid "Again, modules developed this way are best tested with the hacking/test-module script in the git source checkout.  Because of the magic involved, this is really the only way the scripts can function outside of Ansible."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:272
+msgid "If submitting a module to ansible's core code, which we encourage, use of the AnsibleModule class is required."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:278
+msgid "Check Mode"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:281
+msgid "Modules may optionally support check mode. If the user runs Ansible in check mode, the module should try to predict whether changes will occur."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:284
+msgid "For your module to support check mode, you must pass ``supports_check_mode=True`` when instantiating the AnsibleModule object. The AnsibleModule.check_mode attribute will evaluate to True when check mode is enabled. For example::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:297
+msgid "Remember that, as module developer, you are responsible for ensuring that no system state is altered when the user enables check mode."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:300
+msgid "If your module does not support check mode, when the user runs Ansible in check mode, your module will simply be skipped."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:306
+msgid "Common Pitfalls"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:308
+msgid "You should also never do this in a module::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:312
+msgid "Because the output is supposed to be valid JSON."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:314
+msgid "Modules must not output anything on standard error, because the system will merge standard out with standard error and prevent the JSON from parsing. Capturing standard error and returning it as a variable in the JSON on standard out is fine, and is, in fact, how the command module is implemented."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:319
+msgid "If a module returns stderr or otherwise fails to produce valid JSON, the actual output will still be shown in Ansible, but the command will not succeed."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:322
+msgid "Always use the hacking/test-module script when developing modules and it will warn you about these kind of things."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:328
+msgid "Conventions/Recommendations"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:330
+msgid "As a reminder from the example code above, here are some basic conventions and guidelines:"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:333
+msgid "If the module is addressing an object, the parameter for that object should be called 'name' whenever possible, or accept 'name' as an alias."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:335
+msgid "If you have a company module that returns facts specific to your installations, a good name for this module is `site_facts`."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:337
+msgid "Modules accepting boolean status should generally accept 'yes', 'no', 'true', 'false', or anything else a user may likely throw at them.  The AnsibleModule common code supports this with \"choices=BOOLEANS\" and a module.boolean(value) casting function."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:339
+msgid "Include a minimum of dependencies if possible.  If there are dependencies, document them at the top of the module file, and have the module raise JSON error messages when the import fails."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:341
+msgid "Modules must be self-contained in one file to be auto-transferred by ansible."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:343
+msgid "If packaging modules in an RPM, they only need to be installed on the control machine and should be dropped into /usr/share/ansible.  This is entirely optional and up to you."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:345
+msgid "Modules should output valid JSON only. All return types must be hashes (dictionaries) although they can be nested.  Lists or simple scalar values are not supported, though they can be trivially contained inside a dictionary."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:347
+msgid "In the event of failure, a key of 'failed' should be included, along with a string explanation in 'msg'.  Modules that raise tracebacks (stacktraces) are generally considered 'poor' modules, though Ansible can deal with these returns and will automatically convert anything unparseable into a failed result.  If you are using the AnsibleModule common Python code, the 'failed' element will be included for you automatically when you call 'fail_json'."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:349
+msgid "Return codes from modules are not actually not significant, but continue on with 0=success and non-zero=failure for reasons of future proofing."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:351
+msgid "As results from many hosts will be aggregated at once, modules should return only relevant output.  Returning the entire contents of a log file is generally bad form."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:356
+msgid "Documenting Your Module"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:358
+msgid "All modules included in the CORE distribution must have a ``DOCUMENTATION`` string. This string MUST be a valid YAML document which conforms to the schema defined below. You may find it easier to start writing your ``DOCUMENTATION`` string in an editor with YAML syntax highlighting before you include it in your Python file."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:367
+msgid "Example"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:369
+msgid "See an example documentation string in the checkout under `examples/DOCUMENTATION.yml <https://github.com/ansible/ansible/blob/devel/examples/DOCUMENTATION.yml>`_."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:371
+msgid "Include it in your module file like this::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:383
+msgid "The ``description``, and ``notes`` fields support formatting with some special macros."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:386
+msgid "These formatting functions are ``U()``, ``M()``, ``I()``, and ``C()`` for URL, module, italic, and constant-width respectively. It is suggested to use ``C()`` for file and option names, and ``I()`` when referencing parameters; module names should be specified as ``M(module)``."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:391
+msgid "Examples (which typically contain colons, quotes, etc.) are difficult to format with YAML, so these must be written in plain text in an ``EXAMPLES`` string within the module like this::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:400
+msgid "The EXAMPLES section, just like the documentation section, is required in all module pull requests for new modules."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:406
+msgid "Building & Testing"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:408
+msgid "Put your completed module file into the 'library' directory and then run the command: ``make webdocs``. The new 'modules.html' file will be built and appear in the 'docsite/' directory."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:414
+msgid "If you're having a problem with the syntax of your YAML you can validate it on the `YAML Lint <http://www.yamllint.com/>`_ website."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:419
+msgid "You can set the environment variable ANSIBLE_KEEP_REMOTE_FILES=1 on the controlling host to prevent ansible from deleting the remote files so you can debug your module."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:425
+msgid "Module Paths"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:427
+msgid "If you are having trouble getting your module \"found\" by ansible, be sure it is in the ANSIBLE_LIBRARY_PATH."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:429
+msgid "If you have a fork of one of the ansible module projects, do something like this::"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:433
+msgid "And this will make the items in your fork be loaded ahead of what ships with Ansible.  Just be sure to make sure you're not reporting bugs on versions from your fork!"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:436
+msgid "To be safe, if you're working on a variant on something in Ansible's normal distribution, it's not a bad idea to give it a new name while you are working on it, to be sure you know you're pulling your version."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:441
+msgid "Getting Your Module Into Ansible"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:443
+msgid "High-quality modules with minimal dependencies can be included in Ansible, but modules (just due to the programming preferences of the developers) will need to be implemented in Python and use the AnsibleModule common code, and should generally use consistent arguments with the rest of the program.   Stop by the mailing list to inquire about requirements if you like, and submit a github pull request to the `extras <https://github.com/ansible/ansible-modules-extras>`_ project. Included modules will ship with ansible, and also have a chance to be promoted to 'core' status, which gives them slightly higher development priority (though they'll work in exactly the same way)."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:454
+msgid "Deprecating and making module aliases"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:456
+msgid "Starting in 1.8 you can deprecate modules by renaming them with a preceding _, i.e. old_cloud.py to _old_cloud.py, This will keep the module available but hide it from the primary docs and listing."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:459
+msgid "You can also rename modules and keep an alias to the old name by using a symlink that starts with _. This example allows the stat module to be called with fileinfo, making the following examples equivalent"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:462
+msgid "EXAMPLES = ''' ln -s stat.py _fileinfo.py ansible -m stat -a \"path=/tmp\" localhost ansible -m fileinfo -a \"path=/tmp\" localhost '''"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:471
+msgid ":doc:`modules`"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:472
+msgid "Learn about available modules"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:473
+msgid ":doc:`developing_plugins`"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:474
+msgid "Learn about developing plugins"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:475
+msgid ":doc:`developing_api`"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:476
+msgid "Learn about the Python API for playbook and task execution"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:477
+msgid "`GitHub Core modules directory <https://github.com/ansible/ansible-modules-core/tree/devel>`_"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:478
+msgid "Browse source of core modules"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:479
+msgid "`Github Extras modules directory <https://github.com/ansible/ansible-modules-extras/tree/devel>`_"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:480
+msgid "Browse source of extras modules."
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:481
+msgid "`Mailing List <http://groups.google.com/group/ansible-devel>`_"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:482
+msgid "Development mailing list"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:483
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/developing_modules.rst:484
+msgid "#ansible IRC chat channel"
+msgstr ""
+

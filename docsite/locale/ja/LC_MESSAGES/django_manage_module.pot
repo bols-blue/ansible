@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/django_manage_module.rst:5
+msgid "django_manage - Manages a Django application."
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:18
+msgid "Manages a Django application using the *manage.py* application frontend to *django-admin*. With the *virtualenv* parameter, all management commands will be executed by the given *virtualenv* installation."
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:21
+msgid "Options"
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:127
+msgid "Requires virtualenv"
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:130
+msgid "Requires django"
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:134
+msgid "Examples"
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:162
+msgid "*virtualenv* (http://www.virtualenv.org) must be installed on the remote host if the virtualenv parameter is specified."
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:163
+msgid "This module will create a virtualenv if the virtualenv parameter is specified and a virtualenv does not already exist at the given location."
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:164
+msgid "This module assumes English error messages for the 'createcachetable' command to detect table existence, unfortunately."
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:165
+msgid "To be able to use the migrate command, you must have south installed and added as an app in your settings"
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:166
+msgid "To be able to use the collectstatic command, you must have enabled staticfiles in your settings"
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:171
+msgid "This is a Core Module"
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:173
+msgid "The source of this module is hosted on GitHub in the `ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ repo."
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:175
+msgid "If you believe you have found a bug in this module, and are already running the latest stable or development version of Ansible, first look in the `issue tracker at github.com/ansible/ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ to see if a bug has already been filed.  If not, we would be grateful if you would file one."
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:177
+msgid "Should you have a question rather than a bug report, inquries are welcome on the `ansible-project google group <https://groups.google.com/forum/#!forum/ansible-project>`_ or on Ansible's \"#ansible\" channel, located on irc.freenode.net.   Development oriented topics should instead use the similar `ansible-devel google group <https://groups.google.com/forum/#!forum/ansible-devel>`_."
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:179
+msgid "Documentation updates for this module can also be edited directly by submitting a pull request to the module source code, just look for the \"DOCUMENTATION\" block in the source tree."
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:181
+msgid "This is a \"core\" ansible module, which means it will receive slightly higher priority for all requests than those in the \"extras\" repos."
+msgstr ""
+
+#: ../../../rst/django_manage_module.rst:184
+msgid "For help in developing on modules, should you be so inclined, please read :doc:`community`, :doc:`developing_test_pr` and :doc:`developing_modules`."
+msgstr ""
+

@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/raw_module.rst:5
+msgid "raw - Executes a low-down and dirty SSH command"
+msgstr ""
+
+#: ../../../rst/raw_module.rst:14
+msgid "Synopsis"
+msgstr ""
+
+#: ../../../rst/raw_module.rst:17
+msgid "Executes a low-down and dirty SSH command, not going through the module subsystem. This is useful and should only be done in two cases. The first case is installing ``python-simplejson`` on older (Python 2.4 and before) hosts that need it as a dependency to run modules, since nearly all core modules require it. Another is speaking to any devices such as routers that do not have any Python installed. In any other case, using the ``shell`` or ``command`` module is much more appropriate. Arguments given to ``raw`` are run directly through the configured remote shell. Standard output, error output and return code are returned when available. There is no change handler support for this module. This module does not require python on the remote system, much like the ``script`` module."
+msgstr ""
+
+#: ../../../rst/raw_module.rst:21
+msgid "Options"
+msgstr ""
+
+#: ../../../rst/raw_module.rst:51
+msgid "Examples"
+msgstr ""
+
+#: ../../../rst/raw_module.rst:65
+msgid "If you want to execute a command securely and predictably, it may be better to use the ``command`` module instead. Best practices when writing playbooks will follow the trend of using ``command`` unless ``shell`` is explicitly required. When running ad-hoc commands, use your best judgement."
+msgstr ""
+
+#: ../../../rst/raw_module.rst:70
+msgid "This is a Core Module"
+msgstr ""
+
+#: ../../../rst/raw_module.rst:72
+msgid "The source of this module is hosted on GitHub in the `ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ repo."
+msgstr ""
+
+#: ../../../rst/raw_module.rst:74
+msgid "If you believe you have found a bug in this module, and are already running the latest stable or development version of Ansible, first look in the `issue tracker at github.com/ansible/ansible-modules-core <http://github.com/ansible/ansible-modules-core>`_ to see if a bug has already been filed.  If not, we would be grateful if you would file one."
+msgstr ""
+
+#: ../../../rst/raw_module.rst:76
+msgid "Should you have a question rather than a bug report, inquries are welcome on the `ansible-project google group <https://groups.google.com/forum/#!forum/ansible-project>`_ or on Ansible's \"#ansible\" channel, located on irc.freenode.net.   Development oriented topics should instead use the similar `ansible-devel google group <https://groups.google.com/forum/#!forum/ansible-devel>`_."
+msgstr ""
+
+#: ../../../rst/raw_module.rst:78
+msgid "Documentation updates for this module can also be edited directly by submitting a pull request to the module source code, just look for the \"DOCUMENTATION\" block in the source tree."
+msgstr ""
+
+#: ../../../rst/raw_module.rst:80
+msgid "This is a \"core\" ansible module, which means it will receive slightly higher priority for all requests than those in the \"extras\" repos."
+msgstr ""
+
+#: ../../../rst/raw_module.rst:83
+msgid "For help in developing on modules, should you be so inclined, please read :doc:`community`, :doc:`developing_test_pr` and :doc:`developing_modules`."
+msgstr ""
+

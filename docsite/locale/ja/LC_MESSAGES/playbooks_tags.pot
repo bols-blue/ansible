@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/playbooks_tags.rst:2
+msgid "Tags"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:4
+msgid "If you have a large playbook it may become useful to be able to run a specific part of the configuration without running the whole playbook."
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:7
+msgid "Both plays and tasks support a \"tags:\" attribute for this reason."
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:9
+#: ../../../rst/playbooks_tags.rst:49
+msgid "Example::"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:24
+msgid "If you wanted to just run the \"configuration\" and \"packages\" part of a very long playbook, you could do this::"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:28
+msgid "On the other hand, if you want to run a playbook *without* certain tasks, you could do this::"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:32
+msgid "You may also apply tags to roles::"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:37
+msgid "And you may also tag basic include statements::"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:41
+msgid "Both of these have the function of tagging every single task inside the include statement."
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:45
+msgid "Special Tags"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:47
+msgid "There is a special 'always' tag that will always run a task, unless specifically skipped (--skip-tags always)"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:61
+msgid "There are another 3 special keywords for tags, 'tagged', 'untagged' and 'all', which run only tagged, only untagged and all tasks respectively. By default ansible runs as if --tags all had been specified."
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:67
+msgid ":doc:`playbooks`"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:68
+msgid "An introduction to playbooks"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:69
+msgid ":doc:`playbooks_roles`"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:70
+msgid "Playbook organization by roles"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:71
+msgid "`User Mailing List <http://groups.google.com/group/ansible-devel>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:72
+msgid "Have a question?  Stop by the google group!"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:73
+msgid "`irc.freenode.net <http://irc.freenode.net>`_"
+msgstr ""
+
+#: ../../../rst/playbooks_tags.rst:74
+msgid "#ansible IRC chat channel"
+msgstr ""
+

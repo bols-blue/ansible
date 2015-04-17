@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Ansible, Inc
+# This file is distributed under the same license as the Ansible Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansible Documentation 0.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-17 17:09+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../../rst/list_of_network_modules.rst:2
+msgid "Network Modules"
+msgstr ""
+
+#: ../../../rst/list_of_network_modules.rst:15
+msgid "A10"
+msgstr ""
+
+#: ../../../rst/list_of_network_modules.rst:24
+msgid "Basics"
+msgstr ""
+
+#: ../../../rst/list_of_network_modules.rst:33
+msgid "Citrix"
+msgstr ""
+
+#: ../../../rst/list_of_network_modules.rst:40
+msgid "F5"
+msgstr ""
+
+#: ../../../rst/list_of_network_modules.rst:54
+msgid "(D): This marks a module as deprecated, which means a module is kept for backwards compatibility but usage is discouraged.  The module documentation details page may explain more about this rationale."
+msgstr ""
+
+#: ../../../rst/list_of_network_modules.rst:55
+msgid "(E): This marks a module as 'extras', which means it ships with ansible but may be a newer module and possibly (but not necessarily) less actively maintained than 'core' modules."
+msgstr ""
+
+#: ../../../rst/list_of_network_modules.rst:56
+msgid "Tickets filed on modules are filed to different repos than those on the main open source project. Core module tickets should be filed at `ansible/ansible-modules-core on GitHub <http://github.com/ansible/ansible-modules-core>`_, extras tickets to `ansible/ansible-modules-extras on GitHub <http://github.com/ansible/ansible-modules-extras>`_"
+msgstr ""
+
